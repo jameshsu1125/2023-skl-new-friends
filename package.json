@@ -1,7 +1,7 @@
 {
-	"name": "-----------",
-	"description": "-----------",
-	"homepage": "-----------",
+	"name": "2023-skl-new-friends",
+	"description": "新光新朋友",
+	"homepage": "https://github.com/jameshsu1125/2023-skl-new-friends",
 	"main": "index.js",
 	"scripts": {
 		"start": "webpack serve --hot",
