@@ -1,0 +1,38 @@
+.Stake {
+	.head {
+		position: relative;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.9;
+		@img: './img/head.svg';
+
+		&::after {
+			position: absolute;
+			top: -70px;
+			right: -80px;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+			content: '';
+
+			@scale: 0.9;
+			@img: './img/call-for-action.svg';
+		}
+	}
+	.logo {
+		position: absolute;
+		top: 70px;
+		left: 0;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.5;
+		@img: './img/logo.png';
+	}
+}

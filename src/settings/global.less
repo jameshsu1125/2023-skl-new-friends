@@ -2,14 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+
 body {
 	margin: 0;
 	background-color: #eee;
+	font-family: 'Noto Sans TC', sans-serif;
 
 	text-size-adjust: none;
 	overscroll-behavior: none;
 	user-select: none;
 	@apply text-textColor;
+}
+
+hr {
+	border-top: solid 4px #fff;
 }
 
 @layer components {

@@ -17,7 +17,7 @@ const Buddy = memo(() => {
 					<Sup>10次</Sup>抽
 				</div>
 			</div>
-			<div className='grid grid-cols-2 p-5'>
+			<div className='grid grid-cols-none grid-rows-2 p-5 lg:grid-cols-2 lg:grid-rows-none'>
 				<div className='h-full w-full p-5'>
 					<Dialog>
 						<div className='headline'>
