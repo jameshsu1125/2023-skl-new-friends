@@ -1,0 +1,11 @@
+.Join {
+	.header {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.9;
+		@img: './img/header.svg';
+	}
+}

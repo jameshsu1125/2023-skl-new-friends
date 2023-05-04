@@ -1,0 +1,106 @@
+.Alliance {
+	&::before {
+		position: absolute;
+		top: -240px;
+		left: -260px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+		content: '';
+
+		@scale: 0.9;
+		@img: './img/bg-symbol.svg';
+		@apply -z-10;
+	}
+
+	@keyframes AllianceButton {
+		0% {
+			opacity: 0;
+		}
+		20% {
+			opacity: 1;
+		}
+		50% {
+			opacity: 1;
+		}
+		80% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+
+	.AllianceButtonContainer {
+		&::after {
+			position: absolute;
+			top: -65.35px;
+			left: -64.7px;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+			content: '';
+			animation: AllianceButton 1s ease-in-out infinite;
+
+			@scale: 0.9;
+			@img: './img/button-call-for-action.svg';
+		}
+
+		.AllianceButton {
+			filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.1));
+			transition: 0.1s;
+
+			&:hover {
+				filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.2));
+			}
+
+			&:active {
+				filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
+				transform: translateY(10px);
+			}
+		}
+	}
+
+	.head {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+
+		@scale: 0.9;
+		@img: './img/head.svg';
+	}
+
+	.underLine {
+		&::before {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: 0 - image-height(@img) * @scale * 0.5;
+			margin-left: 0 - image-width(@img) * @scale * 0.5;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+			content: '';
+			transform: translateY(5px);
+
+			@scale: 0.8;
+			@img: './img/underline.svg';
+		}
+	}
+
+	.point50 {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.8;
+		@img: './img/50point.svg';
+	}
+}

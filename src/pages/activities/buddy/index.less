@@ -1,0 +1,36 @@
+.Buddy {
+	.head {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+
+		@scale: 0.9;
+		@img: './img/head.svg';
+	}
+
+	.headline {
+		top: -26px;
+
+		@apply absolute text-4xl font-black text-primary;
+
+		&::before {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-bottom: 0;
+			margin-left: 0 - image-width(@img) * @scale * 0.5;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+			content: '';
+			transform: translateY(20px);
+
+			@scale: 0.9;
+			@img: './img/underline.svg';
+		}
+	}
+}

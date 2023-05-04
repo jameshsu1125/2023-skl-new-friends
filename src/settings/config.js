@@ -30,3 +30,15 @@ export const reducer = (state, action) => {
 	if (action.type) return { ...state, [action.type]: action.state };
 	return state;
 };
+
+export const Sections = [
+	'home',
+	'column',
+	'test',
+	'school',
+	'lectures',
+	'join',
+	'activities',
+	'contact',
+	'footer',
+];

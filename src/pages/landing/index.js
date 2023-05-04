@@ -1,13 +1,33 @@
-import { memo, useState } from 'react';
-import { LandingContext, LandingSteps } from './config';
+import { Suspense, lazy, memo, useMemo, useState } from 'react';
 import Container from '../../components/container';
+import Section from '../../components/section';
+import { Sections } from '../../settings/config';
+import { LandingContext, LandingSteps } from './config';
 
 const Landing = memo(({ children }) => {
 	const value = useState(LandingSteps);
+	const Pages = useMemo(() => {
+		const pages = Sections.map((target) => {
+			const Element = lazy(() => import(`../${target}/`));
+			if (Element) {
+				return (
+					<Suspense fallback='' key={target}>
+						<Section>
+							<Element />
+						</Section>
+					</Suspense>
+				);
+			}
+			return '';
+		});
+		return pages;
+	}, []);
+
 	return (
 		<LandingContext.Provider value={value}>
 			<Container>
-				<div className='Landing'>{children}</div>
+				{children}
+				{Pages}
 			</Container>
 		</LandingContext.Provider>
 	);
