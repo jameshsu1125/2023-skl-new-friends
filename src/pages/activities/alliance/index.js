@@ -15,7 +15,7 @@ const Alliance = memo(() => {
 	useEffect(() => {}, []);
 	return (
 		<div className='Alliance relative'>
-			<div className='flex w-full flex-row items-center justify-center'>
+			<div className='relative flex w-full flex-row items-center justify-center'>
 				<div className='w-40 text-right tracking-widest'>
 					直接
 					<Sup>點</Sup>

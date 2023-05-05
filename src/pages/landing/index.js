@@ -3,6 +3,8 @@ import Container from '../../components/container';
 import Section from '../../components/section';
 import { Sections } from '../../settings/config';
 import { LandingContext, LandingSteps } from './config';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Landing = memo(({ children }) => {
 	const value = useState(LandingSteps);

@@ -39,7 +39,7 @@ const Buddy = memo(() => {
 					</Dialog>
 				</div>
 			</div>
-			<div className='w-full text-center text-sm'>
+			<div className='relative z-10 w-full text-center text-sm'>
 				*新朋友定義：成交新契約當下未持有新光⼈壽有效契約者。
 				<br />
 				*僅計入承保完成當⽉之抽獎序號。

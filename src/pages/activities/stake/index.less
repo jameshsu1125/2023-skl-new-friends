@@ -1,4 +1,24 @@
 .Stake {
+	position: relative;
+
+	& > div {
+		position: relative;
+	}
+
+	&::before {
+		position: absolute;
+		top: -260px;
+		right: -320px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+		content: '';
+
+		@scale: 0.9;
+		@img: './img/symbol.svg';
+	}
+
 	.head {
 		position: relative;
 		width: image-width(@img) * @scale;
@@ -23,6 +43,7 @@
 			@img: './img/call-for-action.svg';
 		}
 	}
+
 	.logo {
 		position: absolute;
 		top: 70px;
@@ -34,5 +55,58 @@
 
 		@scale: 0.5;
 		@img: './img/logo.png';
+	}
+
+	.stakeCarouselImage {
+		padding-bottom: 100%;
+		border: solid 3px #fff;
+		border-radius: 2.5rem;
+		background-color: rgba(255, 255, 255, 0.7);
+		background-size: cover;
+		filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.9));
+	}
+
+	.arrow {
+		position: absolute;
+		top: 50%;
+		z-index: 1;
+		margin-top: 0 - image-height(@img) * @scale * 0.5 - 20px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+		cursor: pointer;
+
+		@scale: 0.9;
+		@img: './img/arrow.svg';
+
+		&::before {
+			display: none;
+		}
+	}
+
+	.prev {
+		left: -46px;
+		transform: scale(-1, 1);
+	}
+
+	.next {
+		right: -46px;
+	}
+
+	.c0 {
+		background-image: url('./img/0.png');
+	}
+
+	.c1 {
+		background-image: url('./img/1.png');
+	}
+
+	.c2 {
+		background-image: url('./img/2.png');
+	}
+
+	.c3 {
+		background-image: url('./img/3.png');
 	}
 }
