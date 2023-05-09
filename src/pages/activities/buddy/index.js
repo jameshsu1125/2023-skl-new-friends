@@ -18,7 +18,7 @@ const Buddy = memo(() => {
 				</div>
 			</div>
 			<div className='grid grid-cols-none grid-rows-2 p-5 lg:grid-cols-2 lg:grid-rows-none'>
-				<div className='h-full w-full p-5'>
+				<div className='z-10 h-full w-full p-5'>
 					<Dialog>
 						<div className='headline'>
 							<div className='relative'>月月抽</div>
@@ -28,7 +28,7 @@ const Buddy = memo(() => {
 						</div>
 					</Dialog>
 				</div>
-				<div className='h-full w-full p-5'>
+				<div className='z-10 h-full w-full p-5'>
 					<Dialog className='h-full'>
 						<div className='headline'>
 							<div className='relative'>再購抽</div>

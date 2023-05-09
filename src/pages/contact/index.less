@@ -1,3 +1,27 @@
 .Contact {
 	position: relative;
+
+	& > div {
+		position: relative;
+	}
+
+	&::before {
+		position: absolute;
+		top: 110px;
+		left: 50px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+		content: '';
+		pointer-events: none;
+
+		@scale: 0.9;
+		@img: './img/symbol.svg';
+	}
+
+	h1 {
+		font-weight: 600;
+		@apply -m-2 mb-10 mt-12;
+	}
 }

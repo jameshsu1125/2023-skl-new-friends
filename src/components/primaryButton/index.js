@@ -3,7 +3,7 @@ import './index.less';
 
 const PrimaryButton = memo(({ children, color = 'orange' }) => {
 	const className = useMemo(() => {
-		const classes = ['PrimaryButton rounded-l-full rounded-r-full border-4 px-10 py-2'];
+		const classes = ['PrimaryButton rounded-l-full rounded-r-full border-4 py-2 md:py-3 md:py-2'];
 		if (color === 'orange') classes.push('border-secondary');
 		else classes.push('border-primary');
 		return classes.join(' ');
@@ -11,7 +11,7 @@ const PrimaryButton = memo(({ children, color = 'orange' }) => {
 
 	return (
 		<button className={className} type='button'>
-			{children}
+			<div className='w-96 md:w-72'>{children}</div>
 		</button>
 	);
 });

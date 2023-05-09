@@ -5,7 +5,7 @@ const Container = memo(({ children }) => {
 	useEffect(() => {}, []);
 	return (
 		<div className='Container flex w-full min-w-[640px] justify-center'>
-			<div className='relative w-full max-w-3xl overflow-hidden bg-backgroundColor xl:max-w-7xl'>
+			<div className='relative w-full max-w-3xl overflow-hidden bg-secondaryBackground xl:max-w-7xl'>
 				{children}
 			</div>
 		</div>

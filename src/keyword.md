@@ -6,6 +6,10 @@
 - `block`, `blockquote`
 - `table`
 
+# container
+
+`container` -> `block` -> `box` -> `item`
+
 # animation
 
 - `go`, `play`, `stop`, `pause`, `goto`, `gotoAndPlay`.

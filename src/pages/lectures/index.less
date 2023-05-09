@@ -1,2 +1,117 @@
+@import url('../../settings/config.less');
+
 .Lectures {
+	position: relative;
+
+	& > div {
+		position: relative;
+	}
+
+	&::before {
+		position: absolute;
+		top: -10px;
+		right: -80px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+		content: '';
+		pointer-events: none;
+
+		@scale: 0.9;
+		@img: './img/symbol.svg';
+	}
+
+	.head {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.9;
+		@img: './img/headline.svg';
+	}
+
+	.carousel {
+		position: relative;
+		padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
+		width: @width;
+
+		@width: 100%;
+		@img: './img/mask.png';
+
+		& > div {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			.slick-slider {
+				height: 100%;
+			}
+
+			.slick-dots {
+				bottom: 3rem;
+			}
+
+			.item0 {
+				padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
+				width: @width;
+				background-image: url(@img);
+				background-size: cover;
+
+				@width: 100%;
+				@img: './img/mask.png';
+			}
+
+			.item1 {
+				padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
+				width: @width;
+				background-image: url(@img);
+				background-size: cover;
+
+				@width: 100%;
+				@img: './img/mask.png';
+			}
+
+			.item2 {
+				padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
+				width: @width;
+				background-image: url(@img);
+				background-size: cover;
+
+				@width: 100%;
+				@img: './img/mask.png';
+			}
+
+			.item3 {
+				padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
+				width: @width;
+				background-image: url(@img);
+				background-size: cover;
+
+				@width: 100%;
+				@img: './img/mask.png';
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: @breakPoint) {
+	.Lectures {
+		&::before {
+			top: 490px;
+			right: -70px;
+		}
+
+		.head {
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+
+			@scale: 0.95;
+			@img: './img/headline.svg';
+		}
+	}
 }
