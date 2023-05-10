@@ -34,6 +34,7 @@ export const reducer = (state, action) => {
 export const Sections = [
 	'home',
 	'column',
+	'match',
 	'test',
 	'school',
 	'lectures',

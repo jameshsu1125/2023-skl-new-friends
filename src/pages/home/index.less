@@ -1,7 +1,236 @@
+@import url('../../settings/config.less');
+
 .Home {
+	position: relative;
+	height: 620px;
+	// background-color: red;
+	// background-image: url('./img/t.jpg');
+	// background-size: 100%;
+
 	.center {
 		position: absolute;
 		top: 50%;
 		left: 50%;
+
+		.symbols {
+			position: relative;
+			&::before {
+				position: absolute;
+				top: -1061px + 90px;
+				left: -1529px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+				background-image: url(@img);
+				background-size: 100%;
+				content: '';
+
+				@scale: 0.9;
+				@img: './img/symbol-0.svg';
+			}
+
+			&::after {
+				position: absolute;
+				top: 62px;
+				left: -589px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+				background-image: url(@img);
+				background-size: 100%;
+				content: '';
+
+				@scale: 1;
+				@img: './img/symbol-1.svg';
+			}
+
+			& > div {
+				position: absolute;
+				top: -85px;
+				left: 171px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+				background-image: url(@img);
+				background-size: 100%;
+				content: '';
+
+				@scale: 1;
+				@img: './img/symbol-2.svg';
+			}
+		}
+
+		.g {
+			position: absolute;
+			top: -380px + 90px;
+			left: 205px;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+
+			@scale: 0.364;
+			@img: './img/g.png';
+		}
+
+		.f {
+			position: absolute;
+			top: -248px + 90px;
+			left: -161px;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+
+			@scale: 0.374;
+			@img: './img/f.png';
+
+			&::after {
+				position: absolute;
+				top: 292px;
+				left: 406px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+				background-image: url(@img);
+				background-size: 100%;
+				content: '';
+
+				@scale: 1.37;
+				@img: './img/wave.svg';
+			}
+		}
+
+		.pattern {
+			position: absolute;
+			top: -308px + 90px;
+			left: -480px;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+			filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.3));
+
+			@scale: 1;
+			@img: './img/pattern_xl.svg';
+		}
+
+		.txt {
+			position: absolute;
+			top: 101px;
+			left: -323px;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+
+			@scale: 1;
+			@img: './img/txt.svg';
+
+			& > div {
+				position: absolute;
+				bottom: -40px;
+				left: 50%;
+				margin-left: -100%;
+				width: 200%;
+				height: 30px;
+				color: #d82c18;
+				text-align: center;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: @breakPointMD) {
+	.Home {
+		height: 1163px;
+		// background-image: url('./img/t2.jpg');
+
+		.center {
+			.symbols {
+				&::before {
+					top: -1214px;
+					left: -1429px;
+				}
+
+				& > div {
+					top: -465px;
+					left: -99px;
+					width: image-width(@img) * @scale;
+					height: image-height(@img) * @scale;
+
+					@scale: 1.5;
+					@img: './img/symbol-2.svg';
+				}
+
+				&::after {
+					top: 118px;
+					left: -461px;
+					width: image-width(@img) * @scale;
+					height: image-height(@img) * @scale;
+
+					@scale: 1.7;
+					@img: './img/symbol-1.svg';
+				}
+			}
+
+			.g {
+				top: -570px;
+				left: -295px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+
+				@scale: 0.44;
+				@img: './img/g.png';
+			}
+
+			.f {
+				position: absolute;
+				top: -151px;
+				left: -181px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+
+				@scale: 0.44;
+				@img: './img/f.png';
+
+				&::after {
+					position: absolute;
+					top: 435px;
+					left: 31px;
+					width: image-width(@img) * @scale;
+					height: image-height(@img) * @scale;
+					background-image: url(@img);
+					background-size: 100%;
+					content: '';
+
+					@scale: 1.6;
+					@img: './img/wave.svg';
+				}
+			}
+
+			.pattern {
+				top: -440px;
+				left: -195px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+				background-image: url(@img);
+				background-size: 100%;
+
+				@scale: 1.7;
+				@img: './img/pattern.svg';
+			}
+
+			.txt {
+				top: 383px;
+				left: 50%;
+				margin-left: 0 - image-width(@img) * @scale * 0.5;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+
+				@scale: 1.7;
+				@img: './img/txt.svg';
+
+				& > div {
+					bottom: -49px;
+				}
+			}
+		}
 	}
 }

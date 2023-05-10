@@ -1,0 +1,78 @@
+@import url('../../settings/config.less');
+
+.Match {
+	height: 750px;
+	// background-image: url('./img/t.jpg');
+	background-size: 100%;
+
+	.headline {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 1.6;
+		@img: './img/headline.svg';
+	}
+
+	.center {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		.symbols {
+			position: absolute;
+			top: -556px;
+			left: -647px;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+
+			@scale: 1;
+			@img: './img/symbol.svg';
+
+			&::before {
+				position: absolute;
+				top: 34.4%;
+				left: 59.9%;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+				background-image: url(@img);
+				background-size: 100%;
+				content: '';
+
+				@scale: 1;
+				@img: './img/symbol-1.svg';
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: @breakPointMD) {
+	.Match {
+		height: 1380px;
+		// background-image: url('./img/t2.jpg');
+
+		.center {
+			.symbols {
+				top: -586px;
+				left: -1416px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+
+				@scale: 1.58;
+				@img: './img/symbol.svg';
+
+				&::before {
+					top: 35.4%;
+					left: 59.9%;
+					width: image-width(@img) * @scale;
+					height: image-height(@img) * @scale;
+
+					@scale: 1.6;
+					@img: './img/symbol-1.svg';
+				}
+			}
+		}
+	}
+}

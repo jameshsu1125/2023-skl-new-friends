@@ -1,2 +1,137 @@
+@import url('../../settings/config.less');
+
 .Column {
+	position: relative;
+	height: 718px;
+	// background-image: url('./img/t.jpg');
+	background-size: 100%;
+
+	& > div {
+		position: relative;
+	}
+
+	&::before {
+		position: absolute;
+		margin-top: -103px;
+		padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
+		width: @width;
+		background-image: url(@img);
+		background-size: 100% 100%;
+		content: '';
+		pointer-events: none;
+
+		@width: 100%;
+		@img: './img/symbol.svg';
+	}
+
+	.headline {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.9;
+		@img: './img/headline.svg';
+	}
+
+	.b {
+		position: relative;
+		margin-top: 10px;
+		margin-left: 49px;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 0.45;
+		@img: './img/b.png';
+
+		&::before {
+			position: absolute;
+			top: 65.8%;
+			left: 6%;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+			content: '';
+
+			@scale: 1;
+			@img: './img/wave.svg';
+		}
+
+		&::after {
+			position: absolute;
+			top: 45%;
+			right: -9%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 253px;
+			height: 66px;
+			background-color: rgba(255, 255, 255, 0.8);
+			content: '艾菲爾老師';
+
+			@apply rounded-l-full rounded-r-full text-3xl tracking-widest drop-shadow-xl;
+		}
+	}
+}
+
+@media only screen and (max-width: @breakPointMD) {
+	.Column {
+		height: 1497px;
+		// background-image: url('./img/t2.jpg');
+
+		&::before {
+			margin-top: -675px;
+			margin-left: 50px;
+			transform: rotate(340deg) scale(1.4);
+		}
+
+		.headline {
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+
+			@scale: 1.6;
+			@img: './img/headline_md.svg';
+		}
+
+		.b {
+			position: relative;
+			margin-top: -168px;
+			margin-left: 3px;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+
+			@scale: 0.43;
+			@img: './img/b.png';
+
+			&::before {
+				position: absolute;
+				top: 67.9%;
+				left: 14.1%;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+				background-image: url(@img);
+				background-size: 100%;
+				content: '';
+
+				@scale: 1.4;
+				@img: './img/wave.svg';
+			}
+
+			&::after {
+				top: 42%;
+				right: -20%;
+				width: 297px;
+				height: 92px;
+				letter-spacing: 0.6rem;
+				@apply text-3xl font-bold;
+			}
+		}
+	}
 }

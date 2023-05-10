@@ -9,7 +9,7 @@ const Logo = () => {
 const Navigation = memo(() => {
 	useEffect(() => {}, []);
 	return (
-		<div className='Navigation sticky -mb-5 w-full overflow-hidden pb-5'>
+		<div className='Navigation sticky z-10 -mb-5 w-full overflow-hidden pb-5'>
 			<div className='w-full bg-white p-5 drop-shadow-xl'>
 				<Logo />
 			</div>
