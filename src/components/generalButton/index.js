@@ -5,7 +5,7 @@ const GeneralButton = memo(({ children, color = 'primary' }) => {
 	useEffect(() => {}, []);
 
 	const className = useMemo(() => {
-		const classes = ['GeneralButton rounded-l-full rounded-r-full xl:border-4 m-5 drop-shadow-xl'];
+		const classes = ['GeneralButton rounded-l-full rounded-r-full m-5 drop-shadow-xl'];
 		if (color) classes.push(`border-${color}`);
 		return classes.join(' ');
 	}, [color]);

@@ -6,7 +6,7 @@ const Column = memo(() => {
 	useEffect(() => {}, []);
 	return (
 		<div className='Column flex w-full items-center justify-center'>
-			<div className='flex w-full flex-col items-center justify-start xl:flex-row'>
+			<div className='relative flex w-full flex-col items-center justify-start xl:flex-row'>
 				<div className='relative w-full xl:w-1/2'>
 					<div className='b' />
 				</div>
@@ -20,13 +20,13 @@ const Column = memo(() => {
 						<div className='flex w-full flex-col items-center justify-center xl:flex-row'>
 							<GeneralButton color='tertiary'>
 								<span className='text-3xl xl:text-base'>我是</span>
-								<span className='text-4xl font-bold tracking-widest text-tertiary xl:text-2xl'>
+								<span className='mt-4 text-4xl font-bold tracking-widest text-tertiary xl:mt-0 xl:text-2xl'>
 									新手/孕媽咪
 								</span>
 							</GeneralButton>
 							<GeneralButton color='secondary'>
 								<span className='text-3xl xl:text-base'>我是</span>
-								<span className='text-4xl font-bold tracking-widest text-secondary xl:text-2xl'>
+								<span className='mt-4 text-4xl font-bold tracking-widest text-secondary xl:mt-0 xl:text-2xl'>
 									職場女性
 								</span>
 							</GeneralButton>

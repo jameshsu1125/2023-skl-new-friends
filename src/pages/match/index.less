@@ -11,7 +11,7 @@
 		background-image: url(@img);
 		background-size: 100%;
 
-		@scale: 1.6;
+		@scale: 1.1;
 		@img: './img/headline.svg';
 	}
 
@@ -52,6 +52,16 @@
 	.Match {
 		height: 1380px;
 		// background-image: url('./img/t2.jpg');
+
+		.headline {
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+
+			@scale: 1.6;
+			@img: './img/headline.svg';
+		}
 
 		.center {
 			.symbols {
