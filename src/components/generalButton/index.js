@@ -1,7 +1,7 @@
 import { memo, useEffect, useMemo } from 'react';
 import './index.less';
 
-const GeneralButton = memo(({ children, color = 'primary' }) => {
+const GeneralButton = memo(({ children, color = 'primary', onClick }) => {
 	useEffect(() => {}, []);
 
 	const className = useMemo(() => {
@@ -11,7 +11,7 @@ const GeneralButton = memo(({ children, color = 'primary' }) => {
 	}, [color]);
 
 	return (
-		<button className={className} type='button'>
+		<button onClick={() => onClick?.()} className={className} type='button'>
 			<div className='flex h-full w-[22rem] flex-col items-center justify-center py-6 tracking-widest xl:w-48 xl:py-3'>
 				{children}
 			</div>

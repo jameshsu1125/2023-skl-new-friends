@@ -2,6 +2,8 @@ import { memo, useEffect } from 'react';
 import './index.less';
 import Block from '../../components/block';
 import Carousel from './carousel';
+import RegularButton from '../../components/regularButton';
+import { LecturesURL } from '../../settings/config';
 
 const Box = ({ children }) => <div className='w-full xl:w-1/2'>{children}</div>;
 
@@ -21,8 +23,17 @@ const Lectures = memo(() => {
 						<div className='hidden w-full justify-center xl:flex'>
 							<div className='head' />
 						</div>
-						<div className='w-full p-20'>
+						<div className='w-full p-20 text-3xl xl:text-xl'>
 							專題講座資訊，專題講座資，訊專題講座資訊，專題講座資訊，專題講座資訊，專題講座資訊，專題講座資訊。專題講座資訊專題講座資，訊專題講座資，訊專題講座資訊。
+						</div>
+						<div className='flex w-full justify-center'>
+							<RegularButton
+								onClick={() => {
+									window.open(LecturesURL);
+								}}
+							>
+								了解更多
+							</RegularButton>
 						</div>
 					</Box>
 				</div>

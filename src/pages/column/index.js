@@ -18,13 +18,23 @@ const Column = memo(() => {
 							星座專欄標題星座專欄標題。
 						</div>
 						<div className='flex w-full flex-col items-center justify-center xl:flex-row'>
-							<GeneralButton color='tertiary'>
+							<GeneralButton
+								color='tertiary'
+								onClick={() => {
+									window.location.hash = 'match';
+								}}
+							>
 								<span className='text-3xl xl:text-base'>我是</span>
 								<span className='mt-4 text-4xl font-bold tracking-widest text-tertiary xl:mt-0 xl:text-2xl'>
 									新手/孕媽咪
 								</span>
 							</GeneralButton>
-							<GeneralButton color='secondary'>
+							<GeneralButton
+								color='secondary'
+								onClick={() => {
+									window.location.hash = 'test';
+								}}
+							>
 								<span className='text-3xl xl:text-base'>我是</span>
 								<span className='mt-4 text-4xl font-bold tracking-widest text-secondary xl:mt-0 xl:text-2xl'>
 									職場女性

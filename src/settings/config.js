@@ -43,3 +43,9 @@ export const Sections = [
 	'contact',
 	'footer',
 ];
+
+export const SchoolURL = 'https://www.skl.com.tw/';
+export const LecturesURL = 'https://www.skl.com.tw/';
+export const AllianceURL = 'https://www.skl.com.tw/';
+export const ContactURL = 'https://sc.skl.com.tw/s/xNZ2W';
+export const ContactTel = '0800-031-115';

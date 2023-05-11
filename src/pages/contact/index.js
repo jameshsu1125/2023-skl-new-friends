@@ -4,6 +4,7 @@ import './index.less';
 import SpecialButton from '../../components/specialButton';
 import Collapse from '../../components/collapse';
 import Block from '../../components/block';
+import { ContactTel, ContactURL } from '../../settings/config';
 
 const Contact = memo(() => {
 	useEffect(() => {}, []);
@@ -11,7 +12,11 @@ const Contact = memo(() => {
 		<Block>
 			<div className='Contact w-full px-5 py-28 md:px-14'>
 				<div className='flex w-full flex-col items-center justify-center space-y-8'>
-					<SpecialButton>
+					<SpecialButton
+						onClick={() => {
+							window.open(ContactURL);
+						}}
+					>
 						專人與我聯繫
 						<svg
 							width='24'
@@ -27,7 +32,11 @@ const Contact = memo(() => {
 							/>
 						</svg>
 					</SpecialButton>
-					<SpecialButton>
+					<SpecialButton
+						onClick={() => {
+							window.open(`tel:${ContactTel}`);
+						}}
+					>
 						新光人壽專屬專線 0800-131-115
 						<svg
 							width='24'

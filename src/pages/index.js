@@ -1,4 +1,4 @@
-import { lazy, memo, Suspense, useContext, useMemo, useReducer } from 'react';
+import { lazy, memo, Suspense, useContext, useEffect, useMemo, useReducer } from 'react';
 import { createRoot } from 'react-dom/client';
 import LoadingProcess from '../components/loadingProcess';
 import Navigation from '../components/navigation';
@@ -31,6 +31,9 @@ const Pages = memo(() => {
 const App = () => {
 	const [state, setState] = useReducer(reducer, initialState);
 	const value = useMemo(() => [state, setState], [state]);
+	useEffect(() => {
+		window.location.hash = '';
+	}, []);
 	return (
 		<div className='App'>
 			<Context.Provider {...{ value }}>

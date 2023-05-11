@@ -5,7 +5,7 @@ import RegularButton from '../../components/regularButton';
 const Match = memo(() => {
 	useEffect(() => {}, []);
 	return (
-		<div className='Match relative w-full'>
+		<div id='match' className='Match relative w-full'>
 			<div className='relative h-full w-full overflow-hidden'>
 				<div className='center'>
 					<div className='symbols' />

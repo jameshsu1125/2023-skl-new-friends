@@ -1,2 +1,85 @@
+@import url('../../settings/config.less');
+
 .Test {
+	height: 720px;
+	// background-image: url('./img/t.jpg');
+	background-size: 100%;
+
+	.center {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+
+		.symbol {
+			position: absolute;
+			top: -285px;
+			left: -641px;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+			content: '';
+
+			@scale: 1;
+			@img: './img/symbol.svg';
+		}
+	}
+
+	.headline {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 1;
+		@img: './img/headline.svg';
+	}
+
+	.sub {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 1;
+		@img: './img/sub_xl.svg';
+	}
+}
+
+@media only screen and (max-width: @breakPointMD) {
+	.Test {
+		top: 0%;
+		left: 0px;
+		height: 1380px;
+		// background-image: url('./img/t2.jpg');
+
+		.center {
+			.symbol {
+				top: -238px;
+				left: -554px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+
+				@scale: 1.25;
+				@img: './img/symbol.svg';
+			}
+		}
+
+		.headline {
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+
+			@scale: 1.65;
+			@img: './img/headline.svg';
+		}
+
+		.sub {
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+
+			@scale: 1.65;
+			@img: './img/sub.svg';
+		}
+	}
 }

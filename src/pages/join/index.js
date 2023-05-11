@@ -35,12 +35,21 @@ const Join = memo(() => {
 						<div className='flex w-full justify-center'>
 							<div className='flex flex-col items-center justify-center md:flex-row'>
 								<div className='p-3'>
-									<PrimaryButton>
+									<PrimaryButton
+										onClick={() => {
+											window.location.hash = 'alliance';
+										}}
+									>
 										<ButtonInner title='同盟之樂' description='加會員拿50點' />
 									</PrimaryButton>
 								</div>
 								<div className='p-3'>
-									<PrimaryButton color='red'>
+									<PrimaryButton
+										color='red'
+										onClick={() => {
+											window.location.hash = 'buddy';
+										}}
+									>
 										<ButtonInner title='酒肉之樂' description='吃喝玩樂月月抽' color='red' />
 									</PrimaryButton>
 								</div>
