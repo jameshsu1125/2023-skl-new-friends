@@ -5,6 +5,8 @@ import Navigation from '../components/navigation';
 import { Context, initialState, reducer } from '../settings/config';
 import { ACTION, PAGE } from '../settings/constant';
 import '../settings/global.less';
+import ConstellationMatches from '../components/constellationMatches';
+import PsychologicalTest from '../components/psychologicalTest';
 
 const Pages = memo(() => {
 	const [context] = useContext(Context);
@@ -38,6 +40,8 @@ const App = () => {
 		<div className='App'>
 			<Context.Provider {...{ value }}>
 				<Pages />
+				{state[ACTION.match].enabled && <ConstellationMatches />}
+				{state[ACTION.test].enabled && <PsychologicalTest />}
 				{state[ACTION.LoadingProcess].enabled && <LoadingProcess />}
 			</Context.Provider>
 		</div>

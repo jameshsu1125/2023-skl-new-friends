@@ -1,11 +1,13 @@
 import { createContext } from 'react';
-import { ACTION, LOADING_PROCESS_STATE, PAGE } from './constant';
+import { ACTION, LOADING_PROCESS_STATE, MATCH, PAGE, TEST } from './constant';
 
 export const Context = createContext();
 
 export const initialState = {
 	[ACTION.page]: PAGE.landing,
 	[ACTION.LoadingProcess]: LOADING_PROCESS_STATE,
+	[ACTION.match]: MATCH,
+	[ACTION.test]: TEST,
 };
 
 export const reducer = (state, action) => {

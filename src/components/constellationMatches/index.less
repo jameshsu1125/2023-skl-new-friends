@@ -1,0 +1,210 @@
+.ConstellationMatches {
+	.next {
+		&::after {
+			transform: scale(-1, 1);
+		}
+	}
+
+	.arrow {
+		position: relative;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+
+		@scale: 0.9;
+		@img: './img/arrow.svg';
+
+		&::after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url(@img);
+			background-size: 100%;
+			content: '';
+		}
+	}
+
+	.center {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		.symbols {
+			position: absolute;
+			top: -556px;
+			left: -647px;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+
+			@scale: 1;
+			@img: './img/symbol.svg';
+
+			&::before {
+				position: absolute;
+				top: 34.4%;
+				left: 59.9%;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+				background-image: url(@img);
+				background-size: 100%;
+				content: '';
+
+				@scale: 1;
+				@img: './img/symbol-1.svg';
+			}
+		}
+	}
+
+	.ConstellationGroup {
+		@scale: 0.6;
+
+		& > div {
+			& > div {
+				width: 85px;
+				height: 85px;
+				background-position: center;
+				background-repeat: no-repeat;
+				cursor: pointer;
+				transition: 0.1s;
+
+				&:hover {
+					transform: scale(1.2);
+				}
+			}
+		}
+
+		.ico0 {
+			background-image: url(@img);
+			background-size: image-width(@img) * @scale;
+
+			@img: './img/ico0.svg';
+
+			&:active {
+				background-image: url('./img/ico0-h.svg');
+			}
+		}
+
+		.ico1 {
+			background-image: url(@img);
+			background-size: image-width(@img) * @scale;
+
+			@img: './img/ico1.svg';
+
+			&:active {
+				background-image: url('./img/ico1-h.svg');
+			}
+		}
+
+		.ico2 {
+			background-image: url(@img);
+			background-size: image-width(@img) * @scale;
+
+			@img: './img/ico2.svg';
+
+			&:active {
+				background-image: url('./img/ico2-h.svg');
+			}
+		}
+
+		.ico3 {
+			background-image: url(@img);
+			background-size: image-width(@img) * @scale;
+
+			@img: './img/ico3.svg';
+
+			&:active {
+				background-image: url('./img/ico3-h.svg');
+			}
+		}
+
+		.ico4 {
+			background-image: url(@img);
+			background-size: image-width(@img) * @scale;
+
+			@img: './img/ico4.svg';
+
+			&:active {
+				background-image: url('./img/ico4-h.svg');
+			}
+		}
+
+		.ico5 {
+			background-image: url(@img);
+			background-size: image-width(@img) * @scale;
+
+			@img: './img/ico5.svg';
+
+			&:active {
+				background-image: url('./img/ico5-h.svg');
+			}
+		}
+
+		.ico6 {
+			background-image: url(@img);
+			background-size: image-width(@img) * @scale;
+
+			@img: './img/ico6.svg';
+
+			&:active {
+				background-image: url('./img/ico6-h.svg');
+			}
+		}
+
+		.ico7 {
+			background-image: url(@img);
+			background-size: image-width(@img) * @scale;
+
+			@img: './img/ico7.svg';
+
+			&:active {
+				background-image: url('./img/ico7-h.svg');
+			}
+		}
+
+		.ico8 {
+			background-image: url(@img);
+			background-size: image-width(@img) * @scale;
+
+			@img: './img/ico8.svg';
+
+			&:active {
+				background-image: url('./img/ico8-h.svg');
+			}
+		}
+
+		.ico9 {
+			background-image: url(@img);
+			background-size: image-width(@img) * @scale;
+
+			@img: './img/ico9.svg';
+
+			&:active {
+				background-image: url('./img/ico9-h.svg');
+			}
+		}
+
+		.ico10 {
+			background-image: url(@img);
+			background-size: image-width(@img) * @scale;
+
+			@img: './img/ico10.svg';
+
+			&:active {
+				background-image: url('./img/ico10-h.svg');
+			}
+		}
+
+		.ico11 {
+			background-image: url(@img);
+			background-size: image-width(@img) * @scale;
+
+			@img: './img/ico11.svg';
+
+			&:active {
+				background-image: url('./img/ico11-h.svg');
+			}
+		}
+	}
+}
