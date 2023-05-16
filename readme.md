@@ -8,11 +8,11 @@
 
 <p align="center">
   <a href="https://github.com/jameshsu1125">
-    <img src="https://user-images.githubusercontent.com/70932507/188534539-a68734ac-9330-4fe0-bc49-5fa85116493e.png" alt="Logo" width=72 height=72>
+    <img src="data:image/png;base64,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" alt="Logo" width=150 height=150>
   </a>
-  <h3 align="center">Logo</h3>
+  <h3 align="center">新光人壽</h3>
   <p align="center">
-    Short description   
+  新光新朋友
   </p>
 </p>
 
@@ -27,7 +27,6 @@
 - [Creators](#creators)
 - [Thanks](#thanks)
 - [Copyright and license](#copyright-and-license)
-- [remove optimized svg](#remove-optimized-svg)
 
 ## Quick start
 
@@ -63,36 +62,6 @@ $ npm run build
 - `src` folder is reactJs entry point. default file is named as `index.js`
 - `template` folder is html template for each entry points.
 
-```text
-📦package
- ┣ 📂public
- ┣ 📂src
- ┃ ┣ 📂components
- ┃ ┣ 📂hooks
- ┃ ┣ 📂index
- ┃ ┣ 📂pages
- ┃ ┣ 📂setting
- ┃ ┗ 📜index.js
- ┣ 📂template
- ┃ ┣ 📜template.html
- ┃ ┗ 📜template.meta.js
- ┣ 📜.babelrc
- ┣ 📜.browserslistrc
- ┣ 📜.env.defaults
- ┣ 📜.eslintignore
- ┣ 📜.eslintrc.json
- ┣ 📜.gitattributes
- ┣ 📜.gitignore
- ┣ 📜.prettierignore
- ┣ 📜.prettierrc
- ┣ 📜LICENSE
- ┣ 📜package.json
- ┣ 📜postcss.config.js
- ┣ 📜readme.md
- ┣ 📜tailwind.config.js
- ┗ 📜webpack.config.js
-```
-
 ## Bugs and feature requests
 
 - [Node](https://nodejs.org/en/) version must be above v16
@@ -117,11 +86,3 @@ Thank customers and some manufacturers for their support.
 ## Copyright and license
 
 Code and documentation copyright 2011-2022 the authors. Code released under the [MIT License](https://reponame/blob/master/LICENSE).
-
-## remove optimized svg
-
-```sh
-find . -name '*\<*' | while read f; do mv "$f" "${f//\</}"; done
-```
-
-<!-- open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security -->
