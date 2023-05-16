@@ -1,9 +1,11 @@
-import { memo, useEffect } from 'react';
-import './index.less';
+import { memo, useContext } from 'react';
 import RegularButton from '../../components/regularButton';
+import { Context } from '../../settings/config';
+import './index.less';
+import { ACTION } from '../../settings/constant';
 
 const Match = memo(() => {
-	useEffect(() => {}, []);
+	const [, setContext] = useContext(Context);
 	return (
 		<div id='match' className='Match relative w-full'>
 			<div className='relative h-full w-full overflow-hidden'>
@@ -26,7 +28,13 @@ const Match = memo(() => {
 					</p>
 					<div className='flex w-full items-center justify-center pt-60 xl:pt-10'>
 						<div className='scale-[1.7] xl:scale-125'>
-							<RegularButton>開始配對</RegularButton>
+							<RegularButton
+								onClick={() => {
+									setContext({ type: ACTION.match, state: { enabled: true } });
+								}}
+							>
+								開始配對
+							</RegularButton>
 						</div>
 					</div>
 				</div>

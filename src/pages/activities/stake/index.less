@@ -39,9 +39,28 @@
 			background-image: url(@img);
 			background-size: 100%;
 			content: '';
+			animation: StakeHeadline 1s ease-in-out infinite;
 
 			@scale: 0.9;
 			@img: './img/call-for-action.svg';
+		}
+	}
+
+	@keyframes StakeHeadline {
+		0% {
+			opacity: 0;
+		}
+		20% {
+			opacity: 1;
+		}
+		50% {
+			opacity: 1;
+		}
+		80% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
 		}
 	}
 

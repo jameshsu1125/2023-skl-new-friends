@@ -6,9 +6,35 @@
 	}
 
 	&:hover {
-		background-color: #fff;
-		& > svg {
+		& > svg:nth-child(1) {
 			@apply -mr-1 ml-3;
 		}
 	}
+}
+
+.RegularButton-prev-hover {
+	& > svg {
+		transform: scale(-1, 1);
+	}
+
+	&:hover {
+		& > svg:nth-child(1) {
+			@apply -ml-1 mr-3;
+		}
+	}
+}
+
+.RegularButton-hideIcon {
+	&:hover {
+		background-color: #fff;
+		@apply text-tertiary;
+	}
+}
+
+.RegularButton-white {
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+.RegularButton-tertiary {
+	@apply bg-tertiary text-white;
 }
