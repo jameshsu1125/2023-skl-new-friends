@@ -4,6 +4,7 @@ import { Context } from '../../settings/config';
 import { ACTION } from '../../settings/constant';
 import './index.less';
 import Container from '../container';
+import RegularButton from '../regularButton';
 
 const PsychologicalTest = memo(() => {
 	const [, setContext] = useContext(Context);
@@ -17,7 +18,7 @@ const PsychologicalTest = memo(() => {
 	}, []);
 	return (
 		<OnloadProvider
-			hideBeforeLoaded
+			hideBeforeLoaded={false}
 			onload={() => {
 				setTimeout(() => {
 					setContext({ type: ACTION.LoadingProcess, state: { enabled: false } });
@@ -25,7 +26,20 @@ const PsychologicalTest = memo(() => {
 			}}
 		>
 			<div className='PsychologicalTest fixed left-0 top-0 z-10 flex h-full w-full justify-center bg-secondaryBackground'>
-				<Container>asdasd</Container>
+				<Container>
+					<div className='flex h-full w-full flex-col items-center justify-center'>
+						心裡測驗[node:psychologicalTest Component]
+						<div className='p-5'>
+							<RegularButton
+								onClick={() => {
+									setContext({ type: ACTION.test, state: { enabled: false } });
+								}}
+							>
+								離開
+							</RegularButton>
+						</div>
+					</div>
+				</Container>
 			</div>
 		</OnloadProvider>
 	);
