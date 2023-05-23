@@ -51,7 +51,7 @@ const Question = memo(() => {
 						{`${questionIndex + 1} / ${Questions.length}`}
 					</div>
 				</div>
-				<div className='absolute -left-40 bottom-0'>
+				<div className='absolute -bottom-24 -left-0 xl:-left-40 xl:bottom-0'>
 					{questionIndex > 0 && (
 						<RegularButton
 							prev
