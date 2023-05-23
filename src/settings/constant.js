@@ -79,7 +79,7 @@ export const MATCH_TARGET = {
 };
 
 export const MATCH = {
-	enabled: false,
+	enabled: true,
 	target: MATCH_TARGET.mommy,
 	mommyGroupIndex: 0,
 	mommyConstIndex: 0,

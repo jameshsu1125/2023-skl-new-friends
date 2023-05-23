@@ -14,13 +14,13 @@ export const PSYCHOLOGICAL_STEPS = {
 
 export const PsychologicalTestState = {
 	preload: false,
-	steps: PSYCHOLOGICAL_STEPS.result,
+	steps: PSYCHOLOGICAL_STEPS.unset,
 	questionIndex: 0,
 	userAnswers: [1, 1, 1, 1, 1],
 	userName: 'James',
 };
 
-export const EyeCloseDuration = 3000;
+export const EyeCloseDuration = 2000;
 
 export const Questions = [
 	{
