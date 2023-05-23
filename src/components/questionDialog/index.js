@@ -8,7 +8,7 @@ const QuestionDialog = memo(({ children }) => {
 	return (
 		<div className='QuestionDialog'>
 			<div className={`index q${questionIndex}`} />
-			<div className='h-full w-full px-10 pb-10 pt-20'>{children}</div>
+			<div className='h-full w-full px-5 pb-10 pt-20'>{children}</div>
 		</div>
 	);
 });

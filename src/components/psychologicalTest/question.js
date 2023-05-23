@@ -2,6 +2,7 @@ import { memo, useCallback, useContext, useMemo } from 'react';
 import QuestionDialog from '../questionDialog';
 import { PSYCHOLOGICAL_STEPS, PsychologicalTestContext, Questions } from './config';
 import './question.less';
+import RegularButton from './regularButton';
 
 const Button = ({ children, index, onClick }) => {
 	const items = ['A', 'B', 'C', 'D', 'E'];
@@ -44,6 +45,26 @@ const Question = memo(() => {
 							</Button>
 						))}
 					</div>
+				</div>
+				<div className='absolute -bottom-4 left-0 flex w-full justify-center'>
+					<div className='rounded-l-full rounded-r-full bg-[#F2DDC9] px-4 py-2 text-sm tracking-wide text-white'>
+						{`${questionIndex + 1} / ${Questions.length}`}
+					</div>
+				</div>
+				<div className='absolute -left-40 bottom-0'>
+					{questionIndex > 0 && (
+						<RegularButton
+							prev
+							onClick={() => {
+								setState((S) => ({
+									...S,
+									questionIndex: S.questionIndex - 1,
+								}));
+							}}
+						>
+							上一步
+						</RegularButton>
+					)}
 				</div>
 			</QuestionDialog>
 		</div>

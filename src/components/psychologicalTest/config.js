@@ -1,4 +1,5 @@
 import { createContext } from 'react';
+import { SchoolURL } from '../../settings/config';
 
 export const PsychologicalTestContext = createContext();
 
@@ -112,8 +113,8 @@ export const TestResults = [
 			'【村民型人格】者通常會比較關注風險，積極考慮購買保險等風險管理產品。',
 		],
 		href: [
-			{ name: '防癌險', url: '#' },
-			{ name: '還本型醫療險', url: '#' },
+			{ name: '防癌險', url: SchoolURL },
+			{ name: '還本型醫療險', url: SchoolURL },
 		],
 		description: '【村民型人格】者在性格上最突出的優勢則是踏實、穩重，做事有計劃，不輕易冒險。',
 	},
@@ -153,8 +154,8 @@ export const TestResults = [
 			'【狼人型人格】者較少關注風險和安全問題，對於財富控管教淡泊，而更著重於享受當下的生活方式。',
 		],
 		href: [
-			{ name: '傷害醫療險', url: '#' },
-			{ name: '重大疾病險', url: '#' },
+			{ name: '傷害醫療險', url: SchoolURL },
+			{ name: '重大疾病險', url: SchoolURL },
 		],
 		description:
 			'【狼人型人格】的優勢通常是自信、果斷和獨立，以自己為出發點，結局的輸贏通常不是特別在意，他們更著重遊戲過程，活在當下。',
@@ -195,8 +196,8 @@ export const TestResults = [
 			'【女巫型人格】者有謹慎的特質，他們會在關鍵時刻發動能力，消弭危險，保護善良的人，因為她知道保護自己和村莊的重要性。',
 		],
 		href: [
-			{ name: '實支實付險', url: '#' },
-			{ name: '終身壽險（定期給付型）', url: '#' },
+			{ name: '實支實付險', url: SchoolURL },
+			{ name: '終身壽險（定期給付型）', url: SchoolURL },
 		],
 		description:
 			'【女巫型人格】者，在性格上最突出的優勢可能是她的智慧和策略，以及她為保護村莊而付出的勇氣和責任感。',
@@ -237,8 +238,8 @@ export const TestResults = [
 			'【獵人型人格】者通常不會特別在意金錢，而是更關注自己的道德觀、價值觀。具有完整的風險意識，會做好準備應對可能的挑戰。',
 		],
 		href: [
-			{ name: '長照險', url: '#' },
-			{ name: '美元利變終身還本壽險', url: '#' },
+			{ name: '長照險', url: SchoolURL },
+			{ name: '美元利變終身還本壽險', url: SchoolURL },
 		],
 		description:
 			'【獵人型人格】的優勢是勇敢、忠誠和正義感，在面對困難時能堅持信仰，保護自己和重要的人。父母、伴侶和子女是他們最想保護與守護的。',
@@ -279,8 +280,8 @@ export const TestResults = [
 			'【預言家型人格】者謹慎小心，在安全的前提下，會想創造更多財富和收入，以最大的限度保護自己和其他村民。',
 		],
 		href: [
-			{ name: '定期壽險', url: '#' },
-			{ name: '醫療險', url: '#' },
+			{ name: '定期壽險', url: SchoolURL },
+			{ name: '醫療險', url: SchoolURL },
 		],
 		description:
 			'【預言家型人格】者的優勢，在於保持冷靜、敏銳觀察和分析能力。他們可以從眾多的信息中找出有利線索，並做出正確決策。',
