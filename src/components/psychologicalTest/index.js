@@ -1,13 +1,19 @@
 import OnloadProvider from 'lesca-react-onload';
-import { memo, useContext, useEffect } from 'react';
+import { memo, useContext, useEffect, useMemo, useState } from 'react';
 import { Context } from '../../settings/config';
 import { ACTION } from '../../settings/constant';
 import './index.less';
-import Container from '../container';
-import RegularButton from '../regularButton';
+import { PSYCHOLOGICAL_STEPS, PsychologicalTestContext, PsychologicalTestState } from './config';
+import Opening from './opening';
+import Background from './background';
+import Question from './question';
+import UGC from './ugc';
+import Result from './result';
 
 const PsychologicalTest = memo(() => {
 	const [, setContext] = useContext(Context);
+	const [state, setState] = useState(PsychologicalTestState);
+	const value = useMemo(() => [state, setState], [state]);
 
 	useEffect(() => {
 		document.body.style.overflow = 'hidden';
@@ -16,32 +22,25 @@ const PsychologicalTest = memo(() => {
 			document.body.style.overflow = 'visible';
 		};
 	}, []);
+
 	return (
-		<OnloadProvider
-			hideBeforeLoaded
-			onload={() => {
-				setTimeout(() => {
+		<PsychologicalTestContext.Provider value={value}>
+			<OnloadProvider
+				hideBeforeLoaded={false}
+				onload={() => {
+					setState((S) => ({ ...S, preload: true }));
 					setContext({ type: ACTION.LoadingProcess, state: { enabled: false } });
-				}, 1000);
-			}}
-		>
-			<div className='PsychologicalTest fixed left-0 top-0 z-10 flex h-full w-full justify-center bg-secondaryBackground'>
-				<Container>
-					<div className='flex h-full w-full flex-col items-center justify-center'>
-						心裡測驗[node:psychologicalTest Component]
-						<div className='p-5'>
-							<RegularButton
-								onClick={() => {
-									setContext({ type: ACTION.test, state: { enabled: false } });
-								}}
-							>
-								離開
-							</RegularButton>
-						</div>
-					</div>
-				</Container>
-			</div>
-		</OnloadProvider>
+				}}
+			>
+				<div className='PsychologicalTest fixed left-0 top-0 z-10 flex h-full w-full justify-center bg-secondaryBackground'>
+					<Background />
+					{state.steps < PSYCHOLOGICAL_STEPS.question && <Opening />}
+					{state.steps === PSYCHOLOGICAL_STEPS.question && <Question />}
+					{state.steps === PSYCHOLOGICAL_STEPS.ugc && <UGC />}
+					{state.steps === PSYCHOLOGICAL_STEPS.result && <Result />}
+				</div>
+			</OnloadProvider>
+		</PsychologicalTestContext.Provider>
 	);
 });
 export default PsychologicalTest;

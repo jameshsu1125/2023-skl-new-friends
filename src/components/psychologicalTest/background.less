@@ -1,0 +1,34 @@
+.Background {
+	& > div {
+		@apply fixed top-0 h-full w-full;
+	}
+
+	.bg {
+		background: rgba(255, 255, 255, 1);
+	}
+
+	.dark {
+		background: rgb(54, 66, 95);
+		background: linear-gradient(180deg, rgba(54, 66, 95, 1) 0%, rgba(23, 35, 35, 1) 100%);
+	}
+
+	.lightUp {
+		background: rgb(60, 87, 96);
+		background: linear-gradient(180deg, rgba(60, 87, 96, 1) 0%, rgba(22, 34, 34, 1) 100%);
+	}
+
+	.gradient {
+		@apply flex items-center justify-center;
+
+		&::after {
+			padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
+			width: @width;
+			background-image: url(@img);
+			background-size: cover;
+			content: '';
+
+			@width: 100%;
+			@img: './img/gradient.svg';
+		}
+	}
+}

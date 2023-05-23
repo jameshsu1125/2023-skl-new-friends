@@ -1,0 +1,36 @@
+.UGC {
+	@apply absolute top-0 flex h-full w-full items-center justify-center;
+
+	.dialog {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 1;
+		@img: './img/dialog.svg';
+
+		@apply flex flex-col items-center justify-center space-y-10;
+
+		input {
+			border: solid 2px #fff;
+			background-color: rgba(255, 255, 255, 0.3);
+			color: #fff;
+
+			@apply w-full rounded-l-full rounded-r-full px-5 py-2;
+
+			&::placeholder {
+				color: #fff - #111;
+			}
+		}
+
+		button {
+			background-color: #f2ddc9;
+			@apply rounded-l-full rounded-r-full px-5 py-2 text-white;
+
+			&:hover {
+				background-color: #f2ddc9 - #111;
+			}
+		}
+	}
+}

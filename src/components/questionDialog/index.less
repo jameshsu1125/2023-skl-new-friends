@@ -1,0 +1,54 @@
+.QuestionDialog {
+	position: relative;
+	width: image-width(@img) * @scale;
+	height: image-height(@img) * @scale;
+	background-image: url(@img);
+	background-size: 100%;
+
+	@scale: 0.9;
+	@img: './img/dialog.svg';
+
+	.index {
+		position: absolute;
+		top: -7%;
+		left: 13%;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-position: center;
+		background-size: 100%;
+		background-repeat: no-repeat;
+
+		@scale: 1;
+		@img: './img/q0.svg';
+	}
+
+	.q0 {
+		background-image: url(@img);
+
+		@img: './img/q0.svg';
+	}
+
+	.q1 {
+		background-image: url(@img);
+
+		@img: './img/q1.svg';
+	}
+
+	.q2 {
+		background-image: url(@img);
+
+		@img: './img/q2.svg';
+	}
+
+	.q3 {
+		background-image: url(@img);
+
+		@img: './img/q3.svg';
+	}
+
+	.q4 {
+		background-image: url(@img);
+
+		@img: './img/q4.svg';
+	}
+}

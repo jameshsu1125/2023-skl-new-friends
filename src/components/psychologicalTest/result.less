@@ -1,0 +1,64 @@
+.Result {
+	@apply absolute top-0 flex min-h-full w-full flex-col items-center justify-center overflow-visible p-5 md:flex-row md:p-20;
+
+	ol {
+		li {
+			position: relative;
+			margin: 0;
+			text-indent: 21px;
+			@apply font-semibold;
+
+			& > p {
+				text-indent: 0;
+				@apply py-1 font-normal;
+			}
+
+			&::before {
+				position: absolute;
+				top: 4px;
+				left: 0px;
+				width: 16px;
+				height: 16px;
+				background-image: url('./img/list-image.svg');
+				background-size: 100%;
+				content: '';
+			}
+		}
+	}
+
+	.image {
+		margin: -20%;
+		margin-left: -15%;
+		padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
+		width: @width;
+		background-size: cover;
+
+		@width: 130%;
+		@img: './img/0.png';
+	}
+
+	.img0 {
+		background-image: url('./img/0.png');
+	}
+
+	.img1 {
+		background-image: url('./img/1.png');
+	}
+
+	.img2 {
+		background-image: url('./img/2.png');
+	}
+
+	.img3 {
+		background-image: url('./img/3.png');
+	}
+
+	.img4 {
+		background-image: url('./img/4.png');
+	}
+
+	.dialog {
+		filter: drop-shadow(6px 6px 0px #fcfe9f);
+		@apply w-10/12 rounded-3xl border-2 border-white bg-tertiary p-5 text-xl text-white xl:w-full;
+	}
+}
