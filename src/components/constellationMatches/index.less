@@ -5,6 +5,12 @@
 		}
 	}
 
+	.dialog {
+		background-color: rgba(255, 255, 255, 0.3);
+		filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+		@apply border-4 border-white;
+	}
+
 	.arrow {
 		position: relative;
 		width: image-width(@img) * @scale;
@@ -25,35 +31,40 @@
 		}
 	}
 
+	.ConstellationDescriptionList {
+		position: relative;
+
+		@apply space-y-3;
+
+		& > li {
+			padding-left: 2rem;
+			text-indent: -2rem;
+
+			&::before {
+				content: '1';
+				filter: drop-shadow(-3px 3px 5px rgba(0, 0, 0, 0.1));
+				@apply mr-2 inline-block h-6 w-6 rounded-full bg-secondary text-center indent-0 text-base font-bold leading-6 text-white;
+			}
+		}
+	}
+
 	.center {
 		position: absolute;
 		top: 50%;
 		left: 50%;
+
 		.symbols {
 			position: absolute;
-			top: -556px;
-			left: -647px;
+			top: -336px;
+			left: -417px;
 			width: image-width(@img) * @scale;
 			height: image-height(@img) * @scale;
 			background-image: url(@img);
 			background-size: 100%;
+			// transition: 1s;
 
 			@scale: 1;
 			@img: './img/symbol.svg';
-
-			&::before {
-				position: absolute;
-				top: 34.4%;
-				left: 59.9%;
-				width: image-width(@img) * @scale;
-				height: image-height(@img) * @scale;
-				background-image: url(@img);
-				background-size: 100%;
-				content: '';
-
-				@scale: 1;
-				@img: './img/symbol-1.svg';
-			}
 		}
 	}
 

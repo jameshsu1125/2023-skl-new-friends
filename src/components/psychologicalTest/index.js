@@ -18,7 +18,7 @@ const PsychologicalTest = memo(() => {
 	}, []);
 	return (
 		<OnloadProvider
-			hideBeforeLoaded={false}
+			hideBeforeLoaded
 			onload={() => {
 				setTimeout(() => {
 					setContext({ type: ACTION.LoadingProcess, state: { enabled: false } });

@@ -20,13 +20,15 @@ const ConstellationButtons = memo(() => {
 	};
 
 	return (
-		<div className='flex w-full justify-center'>
+		<div className='flex w-full'>
 			{target === MATCH_TARGET.mommy ? (
-				<RegularButton onClick={next} invert>
-					下一步
-				</RegularButton>
+				<div className='flex w-full justify-end'>
+					<RegularButton onClick={next} invert>
+						下一步
+					</RegularButton>
+				</div>
 			) : (
-				<div className='flex flex-row space-x-6'>
+				<div className='flex w-full flex-row justify-between space-x-6'>
 					<RegularButton prev onClick={prev}>
 						上一步
 					</RegularButton>
