@@ -4,7 +4,7 @@ import './index.less';
 const RegularButton = memo(({ children, invert, onClick, prev, hideIcon }) => {
 	const className = useMemo(() => {
 		const classes = [
-			'RegularButton flex flex-row border-tertiary items-center justify-center rounded-l-full rounded-r-full border-4 px-5 py-2 text-2xl tracking-widest xl:text-base',
+			'RegularButton flex flex-row border-tertiary items-center justify-center rounded-l-full rounded-r-full border-2 px-5 py-2 text-2xl tracking-widest xl:text-base',
 		];
 		if (invert) classes.push('RegularButton-tertiary');
 		else classes.push('RegularButton-white');

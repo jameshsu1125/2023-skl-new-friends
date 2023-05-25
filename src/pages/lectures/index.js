@@ -20,10 +20,10 @@ const Lectures = memo(() => {
 						<Carousel />
 					</Box>
 					<Box>
-						<div className='hidden w-full justify-center xl:flex'>
+						<div className='hidden w-full justify-center pt-10 xl:flex'>
 							<div className='head' />
 						</div>
-						<div className='w-full p-20 text-3xl xl:text-xl'>
+						<div className='w-full px-20 py-20 text-3xl xl:py-14 xl:text-xl'>
 							專題講座資訊，專題講座資，訊專題講座資訊，專題講座資訊，專題講座資訊，專題講座資訊，專題講座資訊。專題講座資訊專題講座資，訊專題講座資，訊專題講座資訊。
 						</div>
 						<div className='flex w-full justify-center'>

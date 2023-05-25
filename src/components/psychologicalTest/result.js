@@ -36,15 +36,17 @@ const Result = memo(() => {
 					您是
 				</div>
 				{title}
-				<div className='text-lg'>{sub}</div>
-				<ol className='w-full space-y-5 text-xl'>
-					{list.map((item, idx) => (
-						<li key={item}>
-							{listTitle[idx]}
-							<p className='text-lg'>{item}</p>
-						</li>
-					))}
-				</ol>
+				<div className='space-y-5 py-8'>
+					<div className='text-lg'>{sub}</div>
+					<ol className='w-full space-y-5 text-xl'>
+						{list.map((item, idx) => (
+							<li key={item}>
+								{listTitle[idx]}
+								<p className='text-lg'>{item}</p>
+							</li>
+						))}
+					</ol>
+				</div>
 				<div className='flex w-full flex-row items-center justify-start space-x-4'>
 					<span>保險建議</span>
 					{href.map((item) => (

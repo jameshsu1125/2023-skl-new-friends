@@ -30,12 +30,12 @@ const ConstellationDescription = memo(() => {
 		};
 	}, [target, mommyGroupIndex, mommyConstIndex, babyGroupIndex, babyConstIndex]);
 
-	console.log(href);
-
 	return (
 		<div className='h-auto w-full space-y-4 pb-5 text-base xl:h-[32rem] xl:pb-0'>
 			{text.map((e) => (
-				<p key={e}>{e}</p>
+				<p className='mt-4' key={e}>
+					{e}
+				</p>
 			))}
 			{href.length && (
 				<ul className='ConstellationDescriptionList'>

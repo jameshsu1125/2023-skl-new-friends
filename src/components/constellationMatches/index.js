@@ -49,7 +49,7 @@ const ConstellationMatches = memo(() => {
 						</div>
 						<div className='relative flex min-h-screen w-full flex-col items-center justify-center pb-20 xl:flex-row-reverse'>
 							<div className='w-full px-36 xl:pl-0 xl:pr-28'>
-								<div className='dialog flex w-full flex-col items-center justify-center space-y-14 rounded-3xl py-5'>
+								<div className='dialog mt-8 flex w-full flex-col items-center justify-center space-y-14 rounded-3xl py-5'>
 									<div className='text-center text-3xl font-medium tracking-widest'>
 										<div className='-my-2 font-semibold text-pink'>
 											STEP
@@ -78,7 +78,7 @@ const ConstellationMatches = memo(() => {
 						<div className='absolute bottom-10 w-full px-28'>
 							<ConstellationButtons />
 						</div>
-						<div className='absolute top-10 flex w-full justify-end px-28'>
+						<div className='absolute top-10 flex hidden w-full justify-end px-28'>
 							<ExitButton
 								onClick={() => {
 									setContext({ type: ACTION.match, state: { enabled: false } });

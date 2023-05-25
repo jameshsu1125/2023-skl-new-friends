@@ -24,7 +24,7 @@ const Question = memo(() => {
 				const finalAnswer = [...userAnswers];
 				finalAnswer[questionIndex] = index + 1;
 				if (questionIndex === Questions.length - 1) {
-					setState((S) => ({ ...S, useAnswers: finalAnswer, steps: PSYCHOLOGICAL_STEPS.ugc }));
+					setState((S) => ({ ...S, userAnswers: finalAnswer, steps: PSYCHOLOGICAL_STEPS.ugc }));
 				} else {
 					setState((S) => ({ ...S, questionIndex: questionIndex + 1, userAnswers: finalAnswer }));
 				}

@@ -11,6 +11,13 @@
 		@img: './img/head.svg';
 	}
 
+	span {
+		padding-bottom: 10px;
+		background-image: url('./img/underline2.svg');
+		background-position: center bottom;
+		background-repeat: no-repeat;
+	}
+
 	.headline {
 		top: -26px;
 
@@ -26,7 +33,6 @@
 			height: image-height(@img) * @scale;
 			background-image: url(@img);
 			background-size: 100%;
-			content: '';
 			transform: translateY(20px);
 
 			@scale: 0.9;

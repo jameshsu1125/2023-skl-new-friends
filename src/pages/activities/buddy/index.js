@@ -6,7 +6,7 @@ import './index.less';
 const Sup = ({ children }) => <span className='text-2xl text-primary'>{children}</span>;
 
 const Buddy = memo(() => (
-	<div id='buddy' className='Buddy relative pt-10'>
+	<div id='buddy' className='Buddy relative'>
 		<div className='flex w-full flex-row items-center justify-center'>
 			<div className='w-40 text-right tracking-widest'>月月簽到月月抽</div>
 			<div className='head mx-8' />
@@ -21,8 +21,10 @@ const Buddy = memo(() => (
 					<div className='headline'>
 						<div className='relative'>月月抽</div>
 					</div>
-					<div className='p-10 text-justify text-2xl tracking-widest'>
-						新朋友於活動期間內以要、被保⼈身份投保壽險/活⼒平安新契約並經承保完成，即可獲得當⽉至活動結束期間之每月1個抽獎序號。
+					<div className='p-10 text-center text-2xl tracking-widest'>
+						新朋友於活動期間內以要、被保⼈身份投保壽險/活⼒平安新契約並經承保完成，即可獲得當⽉至活動結束期間之每月
+						<br />
+						<span>1個抽獎序號</span>。
 					</div>
 				</Dialog>
 			</div>
@@ -31,8 +33,10 @@ const Buddy = memo(() => (
 					<div className='headline'>
 						<div className='relative'>再購抽</div>
 					</div>
-					<div className='p-10 text-justify text-2xl tracking-widest'>
-						活動期間內成為新朋友並再購壽險新契約且經承保完成，每1新契約可獲得當⽉10個抽獎序號。
+					<div className='p-10 text-center text-2xl tracking-widest'>
+						活動期間內成為新朋友並再購壽險新契約且經承保完成，每1新契約可獲得當⽉
+						<br />
+						<span>10個抽獎序號</span>。
 					</div>
 				</Dialog>
 			</div>
