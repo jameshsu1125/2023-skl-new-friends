@@ -10,6 +10,8 @@ const Dialog = memo(({ children, color = 'white', className = '' }) => {
 			classes.push('border-white');
 		} else if (color === 'primary') {
 			classes.push('border-primary');
+		} else if (color === 'pink') {
+			classes.push('border-pink');
 		} else {
 			classes.push('border-secondary');
 		}

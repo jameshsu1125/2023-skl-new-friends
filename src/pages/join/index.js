@@ -6,7 +6,7 @@ import Dialog from '../../components/dialog';
 
 const ButtonInner = ({ title, description, color = 0 }) => {
 	const className = useMemo(() => {
-		const classes = ['text-4xl md:text-2xl font-black tracking-widest'];
+		const classes = ['text-4xl md:text-2xl font-bold tracking-widest'];
 		if (color) classes.push('text-primary');
 		else classes.push('text-secondary');
 		return classes.join(' ');

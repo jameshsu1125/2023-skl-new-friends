@@ -3,7 +3,7 @@ import { memo } from 'react';
 import Dialog from '../../../components/dialog';
 import './index.less';
 
-const Sup = ({ children }) => <span className='text-2xl text-primary'>{children}</span>;
+const Sup = ({ children }) => <span className='text-2xl font-bold text-primary'>{children}</span>;
 
 const Buddy = memo(() => (
 	<div id='buddy' className='Buddy relative'>
@@ -15,9 +15,9 @@ const Buddy = memo(() => (
 				<Sup>10次</Sup>抽
 			</div>
 		</div>
-		<div className='grid grid-cols-none grid-rows-2 p-5 lg:grid-cols-2 lg:grid-rows-none'>
-			<div className='z-10 h-full w-full p-5'>
-				<Dialog>
+		<div className='grid grid-cols-none grid-rows-2 py-5 lg:grid-cols-2 lg:grid-rows-none'>
+			<div className='z-10 h-full w-full py-5 xl:pr-5'>
+				<Dialog color='pink'>
 					<div className='headline'>
 						<div className='relative'>月月抽</div>
 					</div>
@@ -28,8 +28,8 @@ const Buddy = memo(() => (
 					</div>
 				</Dialog>
 			</div>
-			<div className='z-10 h-full w-full p-5'>
-				<Dialog className='h-full'>
+			<div className='z-10 h-full w-full py-5 xl:pl-5'>
+				<Dialog color='pink' className='h-full'>
 					<div className='headline'>
 						<div className='relative'>再購抽</div>
 					</div>

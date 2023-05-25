@@ -11,8 +11,8 @@ const AllianceButton = memo(() => (
 				window.open(AllianceURL);
 			}}
 		>
-			<div className='text-4xl font-black tracking-wider text-primary'>全新</div>
-			<div className='text-xl font-black tracking-wide text-black'>註冊&綁定</div>
+			<div className='text-4xl font-bold tracking-wider text-primary'>全新</div>
+			<div className='text-xl font-bold tracking-wide text-black'>註冊&綁定</div>
 		</button>
 	</div>
 ));

@@ -4,7 +4,7 @@ import Dialog from '../../../components/dialog';
 import AllianceButton from './button';
 import './index.less';
 
-const Sup = ({ children }) => <span className='text-2xl text-primary'>{children}</span>;
+const Sup = ({ children }) => <span className='text-2xl font-bold text-primary'>{children}</span>;
 const Underline = ({ children }) => (
 	<div className='underLine relative font-semibold'>
 		<div className='relative'>{children}</div>

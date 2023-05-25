@@ -3,13 +3,24 @@ import { createRoot } from 'react-dom/client';
 import ConstellationMatches from '../components/constellationMatches';
 import LoadingProcess from '../components/loadingProcess';
 import Navigation from '../components/navigation';
-import { Context, initialState, reducer } from '../settings/config';
+import { Context, initialState, openMatchHash, reducer } from '../settings/config';
 import { ACTION, PAGE } from '../settings/constant';
 import '../settings/global.less';
 
 const Pages = memo(() => {
-	const [context] = useContext(Context);
+	const [context, setContext] = useContext(Context);
 	const page = context[ACTION.page];
+
+	useEffect(() => {
+		window.location.hash = '';
+		window.addEventListener('hashchange', () => {
+			if (window.location.hash === `#${openMatchHash}`) {
+				setContext({ type: ACTION.match, state: { enabled: true } });
+			} else {
+				setContext({ type: ACTION.match, state: { enabled: false } });
+			}
+		});
+	}, []);
 
 	const Page = useMemo(() => {
 		const [target] = Object.values(PAGE).filter((data) => data === page);
@@ -32,9 +43,7 @@ const Pages = memo(() => {
 const App = () => {
 	const [state, setState] = useReducer(reducer, initialState);
 	const value = useMemo(() => [state, setState], [state]);
-	useEffect(() => {
-		window.location.hash = '';
-	}, []);
+
 	return (
 		<div className='App'>
 			<Context.Provider {...{ value }}>

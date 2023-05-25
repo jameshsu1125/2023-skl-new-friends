@@ -1,6 +1,6 @@
 import { memo, useContext } from 'react';
 import RegularButton from '../../components/regularButton';
-import { Context } from '../../settings/config';
+import { Context, openMatchHash } from '../../settings/config';
 import './index.less';
 import { ACTION } from '../../settings/constant';
 
@@ -30,7 +30,7 @@ const Match = memo(() => {
 						<div className='scale-[1.7] xl:scale-125'>
 							<RegularButton
 								onClick={() => {
-									setContext({ type: ACTION.match, state: { enabled: true } });
+									window.location.hash = openMatchHash;
 								}}
 							>
 								開始配對

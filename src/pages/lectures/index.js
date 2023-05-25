@@ -10,7 +10,7 @@ const Box = ({ children }) => <div className='w-full xl:w-1/2'>{children}</div>;
 const Lectures = memo(() => {
 	useEffect(() => {}, []);
 	return (
-		<div className='Lectures flex w-full items-center justify-center'>
+		<div className='Lectures flex w-full items-center justify-center py-20'>
 			<Block>
 				<div className='flex w-full justify-center xl:hidden'>
 					<div className='head' />

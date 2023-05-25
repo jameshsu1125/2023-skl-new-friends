@@ -75,10 +75,10 @@ const ConstellationMatches = memo(() => {
 								<ConstellationDescription />
 							</div>
 						</div>
-						<div className='absolute bottom-10 w-full px-28'>
+						<div className='pointer-events-none absolute bottom-10 w-full px-28'>
 							<ConstellationButtons />
 						</div>
-						<div className='absolute top-10 flex hidden w-full justify-end px-28'>
+						<div className='absolute top-10 hidden w-full justify-end px-28'>
 							<ExitButton
 								onClick={() => {
 									setContext({ type: ACTION.match, state: { enabled: false } });
