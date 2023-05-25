@@ -3,6 +3,7 @@
 .Column {
 	position: relative;
 	height: 718px;
+	background: linear-gradient(0deg, rgba(255, 255, 255, 1) 50%, rgba(245, 245, 245, 1) 100%);
 	// background-image: url('./img/t.jpg');
 	background-size: 100%;
 
@@ -12,6 +13,7 @@
 
 	&::before {
 		position: absolute;
+		z-index: 1;
 		margin-top: -103px;
 		padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
 		width: @width;

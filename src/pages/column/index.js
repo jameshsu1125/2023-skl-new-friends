@@ -4,7 +4,7 @@ import './index.less';
 
 const Column = memo(() => (
 	<div className='Column flex w-full items-center justify-center'>
-		<div className='relative flex w-full flex-col items-center justify-start xl:flex-row'>
+		<div className='relative z-10 flex w-full flex-col items-center justify-start xl:flex-row'>
 			<div className='relative w-full xl:w-1/2'>
 				<div className='b' />
 			</div>
