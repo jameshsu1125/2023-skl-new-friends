@@ -28,8 +28,10 @@ const PsychologicalTest = memo(() => {
 			<OnloadProvider
 				hideBeforeLoaded={false}
 				onload={() => {
-					setState((S) => ({ ...S, preload: true }));
-					setContext({ type: ACTION.LoadingProcess, state: { enabled: false } });
+					setTimeout(() => {
+						setState((S) => ({ ...S, preload: true }));
+						setContext({ type: ACTION.LoadingProcess, state: { enabled: false } });
+					}, 1000);
 				}}
 			>
 				<div className='PsychologicalTest fixed left-0 top-0 z-10 flex h-full w-full justify-center bg-secondaryBackground'>

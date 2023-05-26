@@ -1,3 +1,5 @@
+@import url('../../../settings/config.less');
+
 .Stake {
 	position: relative;
 
@@ -65,7 +67,6 @@
 	}
 
 	.logo {
-		position: absolute;
 		top: 0;
 		left: 0;
 		width: image-width(@img) * @scale;
@@ -73,8 +74,10 @@
 		background-image: url(@img);
 		background-size: 100%;
 
-		@scale: 0.5;
-		@img: './img/logo.png';
+		@scale: 0.25;
+		@img: './img/logo2.png';
+
+		@apply relative xl:absolute;
 	}
 
 	.stakeCarouselImage {
@@ -128,5 +131,17 @@
 
 	.c3 {
 		background-image: url('./img/3.png');
+	}
+}
+
+@media only screen and (max-width: @breakPointMD) {
+	.Stake {
+		.logo {
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+
+			@scale: 0.5;
+			@img: './img/logo2.png';
+		}
 	}
 }

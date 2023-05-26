@@ -5,7 +5,7 @@ const Dialog = memo(({ children, color = 'white', className = '' }) => {
 	useEffect(() => {}, []);
 
 	const dialogClassName = useMemo(() => {
-		const classes = ['flex w-full flex-col items-center justify-center rounded-2xl border-4 py-10'];
+		const classes = ['flex w-full flex-col items-center justify-start rounded-2xl border-4 py-10'];
 		if (color === 'white') {
 			classes.push('border-white');
 		} else if (color === 'primary') {

@@ -1,3 +1,5 @@
+@import url('../../settings/config.less');
+
 .Join {
 	z-index: 1;
 
@@ -9,5 +11,17 @@
 
 		@scale: 0.9;
 		@img: './img/header.svg';
+	}
+}
+
+@media only screen and (max-width: @breakPointMD) {
+	.Join {
+		.header {
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+
+			@scale: 1.2;
+			@img: './img/header.svg';
+		}
 	}
 }

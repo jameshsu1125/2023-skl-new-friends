@@ -1,3 +1,5 @@
+@import url('../../../settings/config.less');
+
 .Alliance {
 	&::before {
 		position: absolute;
@@ -76,6 +78,7 @@
 	}
 
 	.underLine {
+		position: relative;
 		&::before {
 			position: absolute;
 			top: 50%;
@@ -87,7 +90,7 @@
 			background-image: url(@img);
 			background-size: 100%;
 			content: '';
-			transform: translateY(5px);
+			transform: translateY(15px);
 
 			@scale: 0.8;
 			@img: './img/underline.svg';
@@ -102,5 +105,25 @@
 
 		@scale: 0.8;
 		@img: './img/50point.svg';
+	}
+}
+
+@media only screen and (max-width: @breakPointMD) {
+	.Alliance {
+		.head {
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+
+			@scale: 0.75;
+			@img: './img/head.svg';
+		}
+
+		.point50 {
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+
+			@scale: 1.2;
+			@img: './img/50point.svg';
+		}
 	}
 }

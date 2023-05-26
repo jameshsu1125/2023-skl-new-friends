@@ -42,7 +42,7 @@ export const Sections = [
 	'join',
 	'activities',
 	'contact',
-	'footer',
+	// 'footer',
 ];
 
 export const SchoolURL = 'https://www.skl.com.tw/';

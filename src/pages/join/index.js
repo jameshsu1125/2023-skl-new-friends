@@ -29,7 +29,7 @@ const Join = memo(() => {
 				<Dialog>
 					<div className='flex w-full flex-col items-center justify-center'>
 						<div className='header' />
-						<h2 className='mb-10 mt-10 w-full text-center text-5xl tracking-widest md:-mt-5 md:text-2xl'>
+						<h2 className='-mt-5 mb-10 w-full text-center text-4xl tracking-widest md:text-2xl'>
 							樂事即刻展開
 						</h2>
 						<div className='flex w-full justify-center'>

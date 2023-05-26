@@ -11,17 +11,18 @@ const Test = memo(() => (
 		<div className='absolute top-0 h-full w-full xl:pl-[30.5%]'>
 			<div className='flex h-full w-full flex-col items-center justify-center'>
 				<div className='headline' />
-				<div className='sub my-5' />
+				<div className='sub my-16 xl:my-5' />
 				<div className='w-full space-y-10 px-20 py-10 text-center text-2xl xl:space-x-0 xl:py-7 xl:text-xl xl:tracking-widest'>
-					<p className='font-medium'>
+					<p className='text-3xl font-medium leading-relaxed xl:text-xl'>
 						憑藉直覺走入，一起探索內心的自己
-						<br />
+						{window.innerWidth >= 1280 ? <br /> : ''}
 						會如何面對挑戰與危機處理
 					</p>
 				</div>
-				<div className='flex w-full items-center justify-center pt-48 xl:pt-24'>
+				<div className='flex w-full items-center justify-center pt-96 xl:pt-24'>
 					<div className='scale-[1.7] xl:scale-125'>
 						<RegularButton
+							color='orange'
 							onClick={() => {
 								window.open('./test.html');
 							}}
