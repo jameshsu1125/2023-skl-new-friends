@@ -9,8 +9,8 @@ const Activities = memo(() => (
 	<Block>
 		<div className='space-y-20'>
 			<Alliance />
-			<Buddy />
 			<Stake />
+			<Buddy />
 		</div>
 	</Block>
 ));

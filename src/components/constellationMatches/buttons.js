@@ -24,17 +24,17 @@ const ConstellationButtons = memo(() => {
 			{target === MATCH_TARGET.mommy ? (
 				<div className='flex w-full justify-end'>
 					<RegularButton onClick={next} invert>
-						下一步
+						下一步 挑選寶寶星座
 					</RegularButton>
 				</div>
 			) : (
-				<div className='flex w-full flex-row justify-between space-x-6'>
+				<div className='flex w-full flex-row justify-start space-x-6'>
 					<RegularButton prev onClick={prev}>
-						上一步
+						上一步 挑選媽媽星座
 					</RegularButton>
-					<RegularButton invert hideIcon onClick={finished}>
+					{/* <RegularButton invert hideIcon onClick={finished}>
 						完成
-					</RegularButton>
+					</RegularButton> */}
 				</div>
 			)}
 		</div>

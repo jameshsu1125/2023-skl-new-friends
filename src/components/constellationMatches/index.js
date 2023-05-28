@@ -51,11 +51,11 @@ const ConstellationMatches = memo(() => {
 							<div className='w-full px-36 xl:pl-0 xl:pr-28'>
 								<div className='dialog mt-8 flex w-full flex-col items-center justify-center space-y-14 rounded-3xl py-5'>
 									<div className='text-center text-3xl font-medium tracking-widest'>
-										<div className='-my-2 font-semibold text-pink'>
+										<div className='-my-2 font-semibold text-primary'>
 											STEP
 											{target === MATCH_TARGET.mommy ? ' 1' : ' 2'}
 										</div>
-										<span className='text-xl'>
+										<span className='text-2xl'>
 											挑選
 											{target === MATCH_TARGET.mommy ? '媽咪' : '寶寶'}
 											的星座
@@ -70,7 +70,7 @@ const ConstellationMatches = memo(() => {
 								</div>
 							</div>
 							<div className='flex w-full flex-col justify-center space-y-6 px-28 py-5 text-xl xl:pl-28 xl:pr-16'>
-								<Steps />
+								{/* <Steps /> */}
 								<ConstellationTitle />
 								<ConstellationDescription />
 							</div>
@@ -78,10 +78,11 @@ const ConstellationMatches = memo(() => {
 						<div className='pointer-events-none absolute bottom-10 w-full px-28'>
 							<ConstellationButtons />
 						</div>
-						<div className='absolute top-10 hidden w-full justify-end px-28'>
+						<div className='absolute top-10 flex w-full justify-end px-28'>
 							<ExitButton
 								onClick={() => {
-									setContext({ type: ACTION.match, state: { enabled: false } });
+									window.history.back();
+									// setContext({ type: ACTION.match, state: { enabled: false } });
 								}}
 							/>
 						</div>

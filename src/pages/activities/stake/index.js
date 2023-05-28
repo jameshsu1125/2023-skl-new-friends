@@ -46,7 +46,7 @@ const Stake = memo(() => {
 	}, []);
 
 	return (
-		<div className='Stake relative pt-20'>
+		<div className='Stake relative'>
 			<div className='flex w-full flex-col items-center justify-center'>
 				<div className='logo' />
 				<div className='head mr-16 mt-20' />
