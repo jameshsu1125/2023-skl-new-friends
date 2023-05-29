@@ -37,7 +37,7 @@ const ConstellationDescription = memo(() => {
 					{e}
 				</p>
 			))}
-			{href.length && (
+			{href.length != 0 && (
 				<ul className='ConstellationDescriptionList'>
 					{list.map((item) => (
 						<li key={JSON.stringify(item)}>
@@ -48,7 +48,7 @@ const ConstellationDescription = memo(() => {
 					))}
 				</ul>
 			)}
-			{href.length && (
+			{href.length != 0 && (
 				<div className='flex w-full flex-row items-center justify-start'>
 					<b className='mr-5'>保險建議</b>
 					{href.map((item) => (

@@ -78,7 +78,7 @@ const ConstellationMatches = memo(() => {
 						<div className='pointer-events-none absolute bottom-10 w-full px-28'>
 							<ConstellationButtons />
 						</div>
-						<div className='absolute top-10 flex w-full justify-end px-28'>
+						<div className='absolute top-10 flex w-full justify-end px-5 xl:px-28'>
 							<ExitButton
 								onClick={() => {
 									window.history.back();

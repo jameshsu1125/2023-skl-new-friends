@@ -16,12 +16,12 @@ const Match = memo(() => {
 			<div className='absolute left-0 top-0 flex h-full w-full items-center justify-center'>
 				<div className='flex w-full flex-col items-center justify-center space-y-14 p-14 text-center text-3xl md:p-4 xl:mb-5 xl:mr-96 xl:w-[500px] xl:space-y-1 xl:text-xl'>
 					<div id='match' className='headline' />
-					<p className='py-5 leading-relaxed xl:leading-normal'>
+					<p className='pb-2 pt-5 leading-relaxed xl:leading-normal'>
 						擁有新生命或與寶貝接觸時，
 						<br />
 						想必充滿了緊張與期待！
 					</p>
-					<p className='py-5 leading-relaxed xl:leading-normal'>
+					<p className='pb-5 pt-2 leading-relaxed xl:leading-normal'>
 						讓艾菲爾老師來引導你，找到屬於自己的星座，來看看你遇到不同的星座的寶貝時，
 						{window.innerWidth >= 1280 && <br />}
 						可以如何相處呢？
