@@ -4,10 +4,15 @@ import { PSYCHOLOGICAL_STEPS, PsychologicalTestContext, Questions } from './conf
 import './question.less';
 import RegularButton from './regularButton';
 
-const Button = ({ children, index, onClick }) => {
+const Button = ({ children, index, onClick, answerIndex }) => {
 	const items = ['A', 'B', 'C', 'D', 'E'];
+	const className = useMemo(() => {
+		const classes = ['button'];
+		if (answerIndex === index + 1) classes.push('active');
+		return classes.join(' ');
+	}, [index, answerIndex]);
 	return (
-		<button className='button' onClick={() => onClick?.(index)} type='button'>
+		<button className={className} onClick={() => onClick?.(index)} type='button'>
 			<div className='list'>{items[index]}</div>
 			{children}
 		</button>
@@ -40,7 +45,12 @@ const Question = memo(() => {
 					<div className='text-xl font-semibold tracking-wider text-white'>{question}</div>
 					<div className='flex w-full flex-col items-center space-y-5 px-5'>
 						{answers.map((item, index) => (
-							<Button key={item} index={index} onClick={onClick}>
+							<Button
+								key={item}
+								index={index}
+								onClick={onClick}
+								answerIndex={userAnswers[questionIndex]}
+							>
 								{item}
 							</Button>
 						))}

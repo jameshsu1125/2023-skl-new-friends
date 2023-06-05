@@ -25,7 +25,7 @@ const UGC = memo(() => {
 					只差一步取得你的專屬測驗！
 				</div>
 				<div className='flex w-full justify-center px-14'>
-					<input ref={ref} placeholder='輸入您的暱稱（4-6字）' maxLength={12} />
+					<input ref={ref} placeholder='輸入暱稱，一起來看測驗結果吧!（4-6字）' maxLength={12} />
 				</div>
 				<div className='flex w-full justify-center pt-10'>
 					<button type='button' onClick={onClick}>

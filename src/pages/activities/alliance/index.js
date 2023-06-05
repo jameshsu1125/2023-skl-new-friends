@@ -84,12 +84,12 @@ const Alliance = memo(() => {
 					<div>SK點數</div>
 				</div>
 				<AllianceButton />
-				<div className='-my-3 px-5 text-center text-xl xl:text-sm'>
-					*每ID限參加一次。*
-					{width >= 1280 ? <br /> : ''}
-					符合獲點資格者，隔日獲得25點、次月底獲得25點，共計50點。
+				<div className='-my-3 px-2 text-center text-xl xl:text-sm'>
+					*每ID限參加一次。
 					<br />
-					*新朋友定義：{width >= 1280 ? '' : <br />}成交新契約當下未持有新光⼈壽有效契約者。
+					*符合獲點資格者，隔日獲得25點、次月底獲得25點，共計50點。
+					<br />
+					*新朋友定義：成交新契約當下未持有新光⼈壽有效契約者。
 				</div>
 			</Dialog>
 		</div>

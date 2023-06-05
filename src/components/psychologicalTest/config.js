@@ -16,7 +16,7 @@ export const PsychologicalTestState = {
 	preload: false,
 	steps: PSYCHOLOGICAL_STEPS.question,
 	questionIndex: 0,
-	userAnswers: [1, 1, 1, 1, 1],
+	userAnswers: [0, 0, 0, 0, 0],
 	userName: 'James',
 };
 

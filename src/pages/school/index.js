@@ -17,7 +17,7 @@ const School = memo(() => {
 							window.open(SchoolURL);
 						}}
 					>
-						了解更多
+						前往報名
 					</RegularButton>
 				</div>
 			</Block>

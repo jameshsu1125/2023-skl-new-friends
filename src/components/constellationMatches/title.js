@@ -8,7 +8,7 @@ const ConstellationTitle = memo(() => {
 	const { target, mommyGroupIndex, mommyConstIndex, babyGroupIndex, babyConstIndex } =
 		context[ACTION.match];
 
-	const { title } = useMemo(() => {
+	const { title, mommyConst } = useMemo(() => {
 		let idx = 0;
 		let constIdx = 0;
 		if (target === MATCH_TARGET.mommy) {
@@ -22,11 +22,25 @@ const ConstellationTitle = memo(() => {
 		const { list } = group;
 		const data = list[constIdx];
 		const headline = `${data.name}座${target === MATCH_TARGET.mommy ? '媽咪' : '寶寶'}`;
-		return { title: headline };
+
+		const mommyConstellation = `${ConstellationGroups[mommyGroupIndex].list[mommyConstIndex].name}座媽咪`;
+
+		return { title: headline, mommyConst: mommyConstellation };
 	}, [target, mommyGroupIndex, mommyConstIndex, babyGroupIndex, babyConstIndex]);
+
 	return (
 		<div className='w-full space-y-2 tracking-widest'>
-			<div className='text-3xl font-bold'>{title}</div>
+			{target === MATCH_TARGET.baby && <div className='text-3xl font-medium'>{mommyConst}</div>}
+			<div className='text-5xl font-bold'>
+				{target === MATCH_TARGET.mommy ? (
+					title
+				) : (
+					<>
+						搭配
+						<span className='text-pink'>{title}</span>
+					</>
+				)}
+			</div>
 		</div>
 	);
 });

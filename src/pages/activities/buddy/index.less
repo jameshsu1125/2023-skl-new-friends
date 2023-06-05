@@ -1,16 +1,5 @@
 .Buddy {
-	.head {
-		width: image-width(@img) * @scale;
-		height: image-height(@img) * @scale;
-		background-image: url(@img);
-		background-position: center;
-		background-size: contain;
-		background-repeat: no-repeat;
-
-		@scale: 0.9;
-		@img: './img/head.svg';
-	}
-
+	z-index: 2;
 	& > div:nth-child(2) {
 		span {
 			padding-bottom: 10px;
@@ -39,4 +28,17 @@
 			@img: './img/underline.svg';
 		}
 	}
+}
+
+.BuddyHead {
+	z-index: 2;
+	width: image-width(@img) * @scale;
+	height: image-height(@img) * @scale;
+	background-image: url(@img);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+
+	@scale: 0.9;
+	@img: './img/head.svg';
 }

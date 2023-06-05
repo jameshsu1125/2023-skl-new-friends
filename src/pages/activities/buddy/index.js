@@ -3,8 +3,6 @@ import { memo, useEffect, useState } from 'react';
 import Dialog from '../../../components/dialog';
 import './index.less';
 
-const Sup = ({ children }) => <span className='text-2xl font-bold text-primary'>{children}</span>;
-
 const Buddy = memo(() => {
 	const [width, setWidth] = useState(window.innerHeight);
 	useEffect(() => {
@@ -15,31 +13,9 @@ const Buddy = memo(() => {
 		window.addEventListener('resize', resize);
 		return () => window.removeEventListener('resize', resize);
 	}, [width]);
+
 	return (
 		<div id='buddy' className='Buddy relative'>
-			<div className='flex w-full flex-col items-center justify-center xl:flex-row'>
-				{(width >= 1280 && (
-					<>
-						<div className='w-40 text-right tracking-[0.2rem]'>月月簽到月月抽</div>
-						<div className='head mx-8' />
-						<div className='w-40 text-left tracking-widest'>
-							當月再購
-							<Sup>10次</Sup>抽
-						</div>
-					</>
-				)) || (
-					<>
-						<div className='head mx-8' />
-						<div className='flex w-full flex-row items-end justify-center space-x-10'>
-							<div className='w-48 text-right text-xl tracking-widest'>月月簽到月月抽</div>
-							<div className='w-48 text-left text-xl tracking-widest'>
-								當月再購
-								<Sup>10次</Sup>抽
-							</div>
-						</div>
-					</>
-				)}
-			</div>
 			<div className='grid grid-cols-none grid-rows-2 gap-2 pb-5 lg:grid-cols-2 lg:grid-rows-none xl:py-5'>
 				<div className='z-10 h-full w-full py-5 xl:pr-5'>
 					<Dialog color='pink'>

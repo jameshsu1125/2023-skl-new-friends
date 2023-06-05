@@ -1,9 +1,13 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
+import Facebook from 'lesca-facebook-share';
+import Line from 'lesca-line-share';
+import QueryString from 'lesca-url-parameters';
 import { memo, useContext, useEffect, useMemo } from 'react';
-import './result.less';
 import { Context } from '../../settings/config';
 import { ACTION } from '../../settings/constant';
-import { PsychologicalTestContext, TestIndexByScore, TestResults } from './config';
 import HrefButton from '../hrefButton';
+import { PsychologicalTestContext, TestIndexByScore, TestResults } from './config';
+import './result.less';
 
 const Result = memo(() => {
 	const [, setContext] = useContext(Context);
@@ -63,7 +67,32 @@ const Result = memo(() => {
 			</div>
 			<div className='flex w-full flex-col items-center pb-10 xl:w-2/6'>
 				<div className={`image img${index}`} />
-				<div className='dialog'>{description}</div>
+				<div className='h-44'>
+					<div className='dialog'>{description}</div>
+				</div>
+				<div className='flex w-full flex-row items-center justify-center text-xl text-pink'>
+					分享您的測驗結果：
+					<div className='mx-3 flex flex-row items-center space-x-3'>
+						<button
+							className='fb'
+							type='button'
+							onClick={() => {
+								Facebook.share({
+									href: `${QueryString.root()}const-${index}.html`,
+									redirect_uri: QueryString.root(),
+								});
+							}}
+						/>
+						<button
+							className='line'
+							type='button'
+							onClick={() => {
+								Line.share(`${QueryString.root()}const-${index}.html`, '');
+							}}
+						/>
+						<button className='download' type='button' />
+					</div>
+				</div>
 			</div>
 		</div>
 	);

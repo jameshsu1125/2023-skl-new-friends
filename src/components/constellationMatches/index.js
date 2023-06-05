@@ -1,7 +1,7 @@
 import OnloadProvider from 'lesca-react-onload';
 import { memo, useContext, useEffect } from 'react';
 import { Context } from '../../settings/config';
-import { ACTION, MATCH_TARGET } from '../../settings/constant';
+import { ACTION, MATCH, MATCH_TARGET } from '../../settings/constant';
 import Container from '../container';
 import ExitButton from '../exitButton';
 import NextPrevArrow from './arrow';
@@ -10,7 +10,6 @@ import ConstellationDescription from './description';
 import ConstellationGroup from './group';
 import './index.less';
 import ConstellationSelector from './selector';
-import Steps from './steps';
 import ConstellationTitle from './title';
 
 const ConstellationMatches = memo(() => {
@@ -82,7 +81,7 @@ const ConstellationMatches = memo(() => {
 							<ExitButton
 								onClick={() => {
 									window.history.back();
-									// setContext({ type: ACTION.match, state: { enabled: false } });
+									setContext({ type: ACTION.match, state: { ...MATCH } });
 								}}
 							/>
 						</div>

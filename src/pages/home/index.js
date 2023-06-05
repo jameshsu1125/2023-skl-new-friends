@@ -4,7 +4,7 @@ import './index.less';
 const Home = memo(() => {
 	useEffect(() => {}, []);
 	return (
-		<div className='Home flex w-full items-center justify-center overflow-hidden'>
+		<div className='Home mt-0 flex w-full items-center justify-center overflow-hidden xl:mt-[79px]'>
 			<div className='center'>
 				<div className='symbols'>
 					<div />

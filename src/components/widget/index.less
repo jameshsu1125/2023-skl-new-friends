@@ -1,0 +1,35 @@
+@import url('../../settings/config.less');
+.Widget {
+	@apply fixed bottom-5 left-0 w-full;
+
+	.ico {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 1;
+		@img: './img/ico.svg';
+
+		&:hover {
+			transform: scale(1.05);
+		}
+
+		&:active {
+			transform: scale(1.05) translateY(2px) translateX(2px);
+			@apply drop-shadow-none;
+		}
+	}
+}
+
+@media only screen and (max-width: @breakPointMD) {
+	.Widget {
+		.ico {
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+
+			@scale: 1.5;
+			@img: './img/ico.svg';
+		}
+	}
+}

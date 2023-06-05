@@ -27,15 +27,32 @@
 	}
 
 	.image {
-		margin: -20%;
+		position: relative;
+		margin: -10%;
 		margin-left: -15%;
 		padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
 		width: @width;
 		background-size: cover;
 		pointer-events: none;
 
-		@width: 130%;
+		@width: 100%;
 		@img: './img/0.png';
+
+		&::after {
+			position: absolute;
+			content: '';
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			background-image: url(@img);
+			background-size: 100%;
+			left: 50%;
+			margin-left: 0 - image-width(@img) * @scale * 0.5;
+			top: 50%;
+			margin-top: 0 - image-height(@img) * @scale * 0.5;
+
+			@scale: 1.2;
+			@img: './img/circle.svg';
+		}
 	}
 
 	.img0 {
@@ -60,6 +77,54 @@
 
 	.dialog {
 		filter: drop-shadow(6px 6px 0px #fcfe9f);
-		@apply w-10/12 rounded-3xl border-2 border-white bg-tertiary p-5 text-xl text-white xl:w-full;
+		@apply my-2 w-10/12 rounded-3xl border-2 border-white bg-tertiary p-5 text-xl text-white xl:w-full;
+	}
+
+	.fb {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 1;
+		@img: './img/facebook.svg';
+
+		@apply drop-shadow-lg;
+
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
+
+	.line {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 1;
+		@img: './img/line.svg';
+
+		@apply drop-shadow-lg;
+
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
+
+	.download {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@scale: 1;
+		@img: './img/download.svg';
+
+		@apply drop-shadow-lg;
+
+		&:hover {
+			transform: scale(1.05);
+		}
 	}
 }

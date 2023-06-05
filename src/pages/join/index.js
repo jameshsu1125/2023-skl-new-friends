@@ -25,7 +25,7 @@ const Join = memo(() => {
 
 	return (
 		<Block>
-			<div className='Join relative'>
+			<div className='Join relative z-20'>
 				<Dialog>
 					<div className='flex w-full flex-col items-center justify-center'>
 						<div className='header' />

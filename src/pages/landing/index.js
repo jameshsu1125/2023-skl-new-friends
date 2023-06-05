@@ -5,6 +5,7 @@ import { Sections } from '../../settings/config';
 import { LandingContext, LandingSteps } from './config';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Widget from '../../components/widget';
 
 const Landing = memo(({ children }) => {
 	const value = useState(LandingSteps);
@@ -30,6 +31,7 @@ const Landing = memo(({ children }) => {
 			<Container>
 				{children}
 				{Pages}
+				<Widget />
 			</Container>
 		</LandingContext.Provider>
 	);
