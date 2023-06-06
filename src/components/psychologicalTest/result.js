@@ -2,7 +2,8 @@
 import Facebook from 'lesca-facebook-share';
 import Line from 'lesca-line-share';
 import QueryString from 'lesca-url-parameters';
-import { memo, useContext, useEffect, useMemo } from 'react';
+import UserAgent from 'lesca-user-agent';
+import { memo, useContext, useEffect, useMemo, useState } from 'react';
 import { Context } from '../../settings/config';
 import { ACTION } from '../../settings/constant';
 import HrefButton from '../hrefButton';
@@ -14,9 +15,11 @@ const Result = memo(() => {
 	const [state] = useContext(PsychologicalTestContext);
 	const { userAnswers, userName } = state;
 
+	const [device, setDevice] = useState(UserAgent.get());
+
 	const listTitle = ['工作', '愛情', '財富保險'];
 
-	const { title, sub, list, description, index, href } = useMemo(() => {
+	const { title, sub, list, description, index, href, downloadImage } = useMemo(() => {
 		const total = userAnswers.reduce((current, prev) => current + prev, 0);
 		const [range] = TestIndexByScore.filter((e) => {
 			const { min, max } = e;
@@ -32,16 +35,32 @@ const Result = memo(() => {
 		setContext({ type: ACTION.LoadingProcess, state: { enabled: false } });
 	}, []);
 
+	useEffect(() => {
+		const resize = () => {
+			setDevice(UserAgent.get());
+		};
+		resize();
+		window.addEventListener('resize', resize);
+		return () => window.removeEventListener('resize', resize);
+	}, []);
+
 	return (
 		<div className='Result'>
-			<div className='flex w-full flex-col items-start justify-center space-y-4 p-5 pr-20 text-white xl:w-4/6'>
-				<div className='w-full text-2xl font-medium'>
-					{`${userName ? `${userName}, ` : ''}`}
-					您是
+			<div className='flex w-full flex-col items-start justify-center space-y-4 p-5 text-white xl:w-4/6 xl:pr-20'>
+				<div className='flex w-full flex-row items-center'>
+					<div className='w-7/12 space-y-2 xl:w-full'>
+						<div className='w-full text-2xl font-medium'>
+							{`${userName ? `${userName}, ` : ''}`}
+							您是
+						</div>
+						{title}
+						<div className='text-lg'>{sub}</div>
+					</div>
+					<div className='flex w-5/12 scale-125 items-center justify-center xl:hidden'>
+						<div className={`image img${index}`} />
+					</div>
 				</div>
-				{title}
 				<div className='space-y-5 py-8'>
-					<div className='text-lg'>{sub}</div>
 					<ol className='w-full space-y-5 text-xl'>
 						{list.map((item, idx) => (
 							<li key={item}>
@@ -66,11 +85,11 @@ const Result = memo(() => {
 				</div>
 			</div>
 			<div className='flex w-full flex-col items-center pb-10 xl:w-2/6'>
-				<div className={`image img${index}`} />
-				<div className='h-44'>
+				<div className={`image hidden xl:block img${index}`} />
+				<div className='h-44 w-full p-5'>
 					<div className='dialog'>{description}</div>
 				</div>
-				<div className='flex w-full flex-row items-center justify-center text-xl text-pink'>
+				<div className='flex w-full flex-row items-center justify-start p-5 text-xl text-pink xl:justify-center'>
 					分享您的測驗結果：
 					<div className='mx-3 flex flex-row items-center space-x-3'>
 						<button
@@ -83,6 +102,7 @@ const Result = memo(() => {
 								});
 							}}
 						/>
+
 						<button
 							className='line'
 							type='button'
@@ -90,7 +110,25 @@ const Result = memo(() => {
 								Line.share(`${QueryString.root()}const-${index}.html`, '');
 							}}
 						/>
-						<button className='download' type='button' />
+						{device === 'mobile' ? (
+							<button
+								className='download'
+								type='button'
+								onClick={() => {
+									setContext({
+										type: ACTION.modal,
+										state: {
+											enabled: true,
+											body: <img src={downloadImage} alt='淺意識下你是哪一種人格' />,
+										},
+									});
+								}}
+							/>
+						) : (
+							<a href={downloadImage} download='淺意識下你是哪一種人格'>
+								<div className='download cursor-pointer' />
+							</a>
+						)}
 					</div>
 				</div>
 			</div>

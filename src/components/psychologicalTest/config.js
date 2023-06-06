@@ -1,4 +1,9 @@
 import { createContext } from 'react';
+import DownloadImage0 from './img/download/0.jpg';
+import DownloadImage1 from './img/download/1.jpg';
+import DownloadImage2 from './img/download/2.jpg';
+import DownloadImage3 from './img/download/3.jpg';
+import DownloadImage4 from './img/download/4.jpg';
 
 export const PsychologicalTestContext = createContext();
 
@@ -14,10 +19,10 @@ export const PSYCHOLOGICAL_STEPS = {
 
 export const PsychologicalTestState = {
 	preload: false,
-	steps: PSYCHOLOGICAL_STEPS.question,
+	steps: PSYCHOLOGICAL_STEPS.result,
 	questionIndex: 0,
 	userAnswers: [0, 0, 0, 0, 0],
-	userName: 'James',
+	userName: '',
 };
 
 export const EyeCloseDuration = 2000;
@@ -113,6 +118,7 @@ export const TestResults = [
 		],
 		href: [{ name: '防癌險、還本型醫療險', url: 'https://reurl.cc/Rz4nmn' }],
 		description: '【村民型人格】者在性格上最突出的優勢則是踏實、穩重，做事有計劃，不輕易冒險。',
+		downloadImage: DownloadImage0,
 	},
 	{
 		title: (
@@ -152,6 +158,7 @@ export const TestResults = [
 		href: [{ name: '傷害醫療險、重大疾病險', url: 'https://reurl.cc/Rz4nmn' }],
 		description:
 			'【狼人型人格】的優勢通常是自信、果斷和獨立，以自己為出發點，結局的輸贏通常不是特別在意，他們更著重遊戲過程，活在當下。',
+		downloadImage: DownloadImage1,
 	},
 	{
 		title: (
@@ -191,6 +198,7 @@ export const TestResults = [
 		href: [{ name: '長照險、美元利變終身還本壽險', url: 'https://reurl.cc/Rz4nmn' }],
 		description:
 			'【獵人型人格】的優勢是勇敢、忠誠和正義感，在面對困難時能堅持信仰，保護自己和重要的人。父母、伴侶和子女是他們最想保護與守護的。',
+		downloadImage: DownloadImage2,
 	},
 	{
 		title: (
@@ -230,6 +238,7 @@ export const TestResults = [
 		href: [{ name: '定期壽險、醫療險', url: 'https://reurl.cc/Rz4nmn' }],
 		description:
 			'【預言家型人格】者的優勢，在於保持冷靜、敏銳觀察和分析能力。他們可以從眾多的信息中找出有利線索，並做出正確決策。',
+		downloadImage: DownloadImage3,
 	},
 	{
 		title: (
@@ -269,6 +278,7 @@ export const TestResults = [
 		href: [{ name: '實支實付險、終身壽險（定期給付型）', url: 'https://reurl.cc/Rz4nmn' }],
 		description:
 			'【女巫型人格】者，在性格上最突出的優勢可能是她的智慧和策略，以及她為保護村莊而付出的勇氣和責任感。',
+		downloadImage: DownloadImage4,
 	},
 ];
 

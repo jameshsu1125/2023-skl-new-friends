@@ -10,9 +10,11 @@ import Question from './question';
 import UGC from './ugc';
 import Result from './result';
 import ExitButton from '../exitButton';
+import Modal from '../modal';
 
 const PsychologicalTest = memo(() => {
-	const [, setContext] = useContext(Context);
+	const [context, setContext] = useContext(Context);
+	const modal = context[ACTION.modal];
 	const [state, setState] = useState(PsychologicalTestState);
 	const value = useMemo(() => [state, setState], [state]);
 
@@ -52,6 +54,7 @@ const PsychologicalTest = memo(() => {
 						}}
 					/>
 				</div>
+				<div>{modal.enabled && <Modal />}</div>
 			</OnloadProvider>
 		</PsychologicalTestContext.Provider>
 	);

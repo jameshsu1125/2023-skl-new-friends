@@ -2,6 +2,7 @@ export const ACTION = {
 	page: '頁面',
 	LoadingProcess: '讀取產生中',
 	match: '星座配對',
+	modal: 'modal',
 };
 
 export const PAGE = {
@@ -22,6 +23,11 @@ export const LOADING_PROCESS_TYPE = [
 export const LOADING_PROCESS_STATE = {
 	enabled: false,
 	type: LOADING_PROCESS_TYPE[1] || 'spokes',
+	body: '',
+};
+
+export const MODAL_STATE = {
+	enabled: false,
 	body: '',
 };
 

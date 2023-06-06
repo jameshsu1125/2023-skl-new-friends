@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { ACTION, LOADING_PROCESS_STATE, MATCH, PAGE } from './constant';
+import { ACTION, LOADING_PROCESS_STATE, MATCH, MODAL_STATE, PAGE } from './constant';
 
 export const Context = createContext();
 
@@ -7,6 +7,7 @@ export const initialState = {
 	[ACTION.page]: PAGE.landing,
 	[ACTION.LoadingProcess]: LOADING_PROCESS_STATE,
 	[ACTION.match]: MATCH,
+	[ACTION.modal]: MODAL_STATE,
 };
 
 export const reducer = (state, action) => {
