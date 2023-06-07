@@ -10,6 +10,9 @@ const Activities = memo(() => (
 	<Block>
 		<div className='space-y-20'>
 			<Alliance />
+			<div className='relative'>
+				<div id='buddy' className='absolute -m-[120px]' />
+			</div>
 			<BuddyHead />
 			<Stake />
 			<Buddy />

@@ -22,7 +22,8 @@ const Alliance = memo(() => {
 		return () => window.removeEventListener('resize', resize);
 	}, [width]);
 	return (
-		<div id='alliance' className='Alliance relative'>
+		<div className='Alliance relative'>
+			<div id='alliance' className='absolute -m-[80px]' />
 			<div className='relative flex w-full flex-col items-center justify-center xl:flex-row'>
 				{(width >= 1280 && (
 					<>

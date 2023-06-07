@@ -86,7 +86,7 @@ const Result = memo(() => {
 			</div>
 			<div className='flex w-full flex-col items-center pb-10 xl:w-2/6'>
 				<div className={`image hidden xl:block img${index}`} />
-				<div className='h-44 w-full p-5'>
+				<div className='min-h-[11rem] w-full p-5'>
 					<div className='dialog'>{description}</div>
 				</div>
 				<div className='flex w-full flex-row items-center justify-start p-5 text-xl text-pink xl:justify-center'>

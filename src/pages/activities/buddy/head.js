@@ -14,7 +14,7 @@ const BuddyHead = memo(() => {
 		return () => window.removeEventListener('resize', resize);
 	}, [width]);
 	return (
-		<div className='z-10 flex w-full flex-col items-center justify-center xl:flex-row'>
+		<div className='relative z-10 flex w-full flex-col items-center justify-center xl:flex-row'>
 			{(width >= 1280 && (
 				<>
 					<div className='z-10 w-40 text-right tracking-[0.2rem]'>月月簽到月月抽</div>

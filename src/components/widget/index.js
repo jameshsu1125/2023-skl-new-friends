@@ -7,11 +7,11 @@ import './index.less';
 const Widget = memo(() => {
 	useEffect(() => {}, []);
 	return (
-		<div className='Widget z-20'>
+		<div className='Widget pointer-events-none z-20'>
 			<Container background={false}>
 				<div className='relative flex h-20 w-full items-center justify-end xl:h-16'>
 					<button
-						className='ico mr-8 drop-shadow-lg'
+						className='ico pointer-events-auto mr-8 drop-shadow-lg'
 						type='button'
 						onClick={() => {
 							window.open(WidgetURL);

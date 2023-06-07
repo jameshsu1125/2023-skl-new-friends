@@ -15,7 +15,7 @@ const Buddy = memo(() => {
 	}, [width]);
 
 	return (
-		<div id='buddy' className='Buddy relative'>
+		<div className='Buddy relative'>
 			<div className='grid grid-cols-none grid-rows-2 gap-2 pb-5 lg:grid-cols-2 lg:grid-rows-none xl:py-5'>
 				<div className='z-10 h-full w-full py-5 xl:pr-5'>
 					<Dialog color='pink'>
