@@ -23,7 +23,7 @@ const Alliance = memo(() => {
 	}, [width]);
 	return (
 		<div className='Alliance relative'>
-			<div id='alliance' className='absolute -m-[80px]' />
+			<div id='alliance' className='absolute -m-[50px] xl:-m-[80px]' />
 			<div className='relative flex w-full flex-col items-center justify-center xl:flex-row'>
 				{(width >= 1280 && (
 					<>

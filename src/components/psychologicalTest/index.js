@@ -44,7 +44,7 @@ const PsychologicalTest = memo(() => {
 					{state.steps === PSYCHOLOGICAL_STEPS.ugc && <UGC />}
 					{state.steps === PSYCHOLOGICAL_STEPS.result && <Result />}
 				</div>
-				<div className='absolute top-10 z-10 flex w-full justify-end px-5 xl:px-28'>
+				<div className='absolute top-10 z-10 hidden w-full justify-end px-5 xl:flex xl:px-28'>
 					<ExitButton
 						color='white'
 						onClick={() => {
