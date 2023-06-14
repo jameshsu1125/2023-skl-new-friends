@@ -1,3 +1,4 @@
+import Gtag from 'lesca-gtag';
 import { memo, useState } from 'react';
 import './index.less';
 
@@ -14,6 +15,7 @@ const Collapse = memo(({ title, children }) => {
 					className='title flex h-[2.9rem] w-full flex-row items-center justify-center'
 					onClick={() => {
 						setOpen((S) => !S);
+						Gtag.event('聯絡與注意事項', '注意事項');
 					}}
 					type='button'
 				>

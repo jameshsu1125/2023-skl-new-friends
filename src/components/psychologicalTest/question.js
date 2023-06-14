@@ -1,11 +1,13 @@
+import Gtag from 'lesca-gtag';
 import { memo, useCallback, useContext, useMemo } from 'react';
 import QuestionDialog from '../questionDialog';
 import { PSYCHOLOGICAL_STEPS, PsychologicalTestContext, Questions } from './config';
 import './question.less';
 import RegularButton from './regularButton';
 
+const items = ['A', 'B', 'C', 'D', 'E'];
+
 const Button = ({ children, index, onClick, answerIndex }) => {
-	const items = ['A', 'B', 'C', 'D', 'E'];
 	const className = useMemo(() => {
 		const classes = ['button'];
 		if (answerIndex === index + 1) classes.push('active');
@@ -33,6 +35,7 @@ const Question = memo(() => {
 				} else {
 					setState((S) => ({ ...S, questionIndex: questionIndex + 1, userAnswers: finalAnswer }));
 				}
+				Gtag.event(`Q${questionIndex + 1}`, items[index]);
 			}
 		},
 		[questionIndex, userAnswers],

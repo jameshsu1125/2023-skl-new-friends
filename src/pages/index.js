@@ -1,3 +1,4 @@
+import Gtag from 'lesca-gtag';
 import { lazy, memo, Suspense, useContext, useEffect, useMemo, useReducer } from 'react';
 import { createRoot } from 'react-dom/client';
 import ConstellationMatches from '../components/constellationMatches';
@@ -6,6 +7,8 @@ import Navigation from '../components/navigation';
 import { Context, initialState, openMatchHash, reducer } from '../settings/config';
 import { ACTION, PAGE } from '../settings/constant';
 import '../settings/global.less';
+
+Gtag.install(process.env.GID);
 
 const Pages = memo(() => {
 	const [context, setContext] = useContext(Context);
@@ -43,6 +46,10 @@ const Pages = memo(() => {
 const App = () => {
 	const [state, setState] = useReducer(reducer, initialState);
 	const value = useMemo(() => [state, setState], [state]);
+
+	useEffect(() => {
+		Gtag.pv('首頁');
+	}, []);
 
 	return (
 		<div className='App'>

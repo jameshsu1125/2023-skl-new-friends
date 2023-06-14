@@ -1,8 +1,9 @@
+import Gtag from 'lesca-gtag';
 import { memo, useEffect } from 'react';
-import './index.less';
 import Block from '../../components/block';
 import RegularButton from '../../components/regularButton';
 import { SchoolURL } from '../../settings/config';
+import './index.less';
 
 const School = memo(() => {
 	useEffect(() => {}, []);
@@ -15,6 +16,7 @@ const School = memo(() => {
 					<RegularButton
 						onClick={() => {
 							window.open(SchoolURL);
+							Gtag.event('媽媽教室', '前往報名');
 						}}
 					>
 						前往報名

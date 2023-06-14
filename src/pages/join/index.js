@@ -1,8 +1,9 @@
+import Gtag from 'lesca-gtag';
 import { memo, useEffect, useMemo } from 'react';
-import './index.less';
 import Block from '../../components/block';
-import PrimaryButton from '../../components/primaryButton';
 import Dialog from '../../components/dialog';
+import PrimaryButton from '../../components/primaryButton';
+import './index.less';
 
 const ButtonInner = ({ title, description, color = 0 }) => {
 	const className = useMemo(() => {
@@ -38,6 +39,7 @@ const Join = memo(() => {
 									<PrimaryButton
 										onClick={() => {
 											window.location.hash = 'alliance';
+											Gtag.event('加入新光新朋友', '同盟之樂');
 										}}
 									>
 										<ButtonInner title='同盟之樂' description='加會員拿50點' />
@@ -48,6 +50,7 @@ const Join = memo(() => {
 										color='red'
 										onClick={() => {
 											window.location.hash = 'buddy';
+											Gtag.event('加入新光新朋友', '酒肉之樂');
 										}}
 									>
 										<ButtonInner title='酒肉之樂' description='吃喝玩樂月月抽' color='red' />

@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import Facebook from 'lesca-facebook-share';
+import Gtag from 'lesca-gtag';
 import Line from 'lesca-line-share';
 import QueryString from 'lesca-url-parameters';
 import UserAgent from 'lesca-user-agent';
@@ -19,7 +20,7 @@ const Result = memo(() => {
 
 	const listTitle = ['工作', '愛情', '財富保險'];
 
-	const { title, sub, list, description, index, href, downloadImage } = useMemo(() => {
+	const { title, sub, list, description, index, href, downloadImage, currentName } = useMemo(() => {
 		const total = userAnswers.reduce((current, prev) => current + prev, 0);
 		const [range] = TestIndexByScore.filter((e) => {
 			const { min, max } = e;
@@ -30,6 +31,10 @@ const Result = memo(() => {
 		if (range) idx = range.index;
 		return { ...TestResults[idx], index: idx };
 	}, [userAnswers]);
+
+	useEffect(() => {
+		Gtag.pv(`結果-${currentName}`);
+	}, [currentName]);
 
 	useEffect(() => {
 		setContext({ type: ACTION.LoadingProcess, state: { enabled: false } });
@@ -96,10 +101,13 @@ const Result = memo(() => {
 							className='fb'
 							type='button'
 							onClick={() => {
-								Facebook.share({
-									href: `${QueryString.root()}const-${index}.html`,
-									redirect_uri: QueryString.root(),
-								});
+								Gtag.event('結果', '臉書分享');
+								setTimeout(() => {
+									Facebook.share({
+										href: `${QueryString.root()}const-${index}.html`,
+										redirect_uri: QueryString.root(),
+									});
+								}, 500);
 							}}
 						/>
 
@@ -107,7 +115,10 @@ const Result = memo(() => {
 							className='line'
 							type='button'
 							onClick={() => {
-								Line.share(`${QueryString.root()}const-${index}.html`, '');
+								Gtag.event('結果', 'line分享');
+								setTimeout(() => {
+									Line.share(`${QueryString.root()}const-${index}.html`, '');
+								}, 500);
 							}}
 						/>
 						{device === 'mobile' ? (
@@ -115,6 +126,7 @@ const Result = memo(() => {
 								className='download'
 								type='button'
 								onClick={() => {
+									Gtag.event('結果', '下載');
 									setContext({
 										type: ACTION.modal,
 										state: {

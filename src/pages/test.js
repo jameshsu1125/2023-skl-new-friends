@@ -1,4 +1,5 @@
 import Facebook from 'lesca-facebook-share';
+import Gtag from 'lesca-gtag';
 import { lazy, memo, Suspense, useContext, useEffect, useMemo, useReducer } from 'react';
 import { createRoot } from 'react-dom/client';
 import LoadingProcess from '../components/loadingProcess';
@@ -7,6 +8,7 @@ import { ACTION } from '../settings/constant';
 import '../settings/global.less';
 
 Facebook.install(process.env.FB_ID);
+Gtag.install(process.env.GID);
 
 const Pages = memo(() => {
 	const [context] = useContext(Context);
@@ -29,6 +31,7 @@ const App = () => {
 	const value = useMemo(() => [state, setState], [state]);
 	useEffect(() => {
 		window.location.hash = '';
+		Gtag.pv('心裡測驗');
 	}, []);
 	return (
 		<div className='App'>

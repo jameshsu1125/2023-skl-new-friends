@@ -1,8 +1,9 @@
+import Gtag from 'lesca-gtag';
 import { memo, useEffect } from 'react';
-import './index.less';
 import Block from '../../components/block';
 import RegularButton from '../../components/regularButton';
 import { BannerBUrl } from '../../settings/config';
+import './index.less';
 
 const BannerB = memo(() => {
 	useEffect(() => {}, []);
@@ -14,6 +15,7 @@ const BannerB = memo(() => {
 					<RegularButton
 						onClick={() => {
 							window.open(BannerBUrl);
+							Gtag.event('Banner財富之由之路', '了解更多');
 						}}
 					>
 						了解更多

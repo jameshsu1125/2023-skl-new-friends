@@ -1,3 +1,4 @@
+import Gtag from 'lesca-gtag';
 import { memo } from 'react';
 import RegularButton from '../../components/regularButton';
 import { openMatchHash } from '../../settings/config';
@@ -25,6 +26,7 @@ const Match = memo(() => (
 						<RegularButton
 							onClick={() => {
 								window.location.hash = openMatchHash;
+								Gtag.event('星座魔法天生一對', '開始配對');
 							}}
 						>
 							開始配對

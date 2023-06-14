@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-one-expression-per-line */
+import Gtag from 'lesca-gtag';
 import { memo } from 'react';
 import RegularButton from '../../components/regularButton';
 import './index.less';
@@ -24,6 +25,7 @@ const Test = memo(() => (
 						<RegularButton
 							onClick={() => {
 								window.open('./test.html');
+								Gtag.event('天黑請閉眼', '開始測驗');
 							}}
 						>
 							開始測驗

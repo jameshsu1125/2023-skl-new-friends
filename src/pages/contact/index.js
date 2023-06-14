@@ -1,10 +1,11 @@
 /* eslint-disable max-len */
+import Gtag from 'lesca-gtag';
 import { memo, useEffect } from 'react';
-import './index.less';
-import SpecialButton from '../../components/specialButton';
-import Collapse from '../../components/collapse';
 import Block from '../../components/block';
+import Collapse from '../../components/collapse';
+import SpecialButton from '../../components/specialButton';
 import { ContactTel, ContactURL } from '../../settings/config';
+import './index.less';
 
 const Contact = memo(() => {
 	useEffect(() => {}, []);
@@ -15,6 +16,7 @@ const Contact = memo(() => {
 					<SpecialButton
 						onClick={() => {
 							window.open(ContactURL);
+							Gtag.event('聯絡與注意事項', '專人與我聯繫');
 						}}
 					>
 						專人與我聯繫
@@ -35,6 +37,7 @@ const Contact = memo(() => {
 					<SpecialButton
 						onClick={() => {
 							window.open(`tel:${ContactTel}`);
+							Gtag.event('聯絡與注意事項', '專屬專線');
 						}}
 					>
 						新光人壽專屬專線 0800-131-115

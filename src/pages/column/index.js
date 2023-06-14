@@ -1,3 +1,4 @@
+import Gtag from 'lesca-gtag';
 import { memo } from 'react';
 import GeneralButton from '../../components/generalButton';
 import './index.less';
@@ -26,6 +27,7 @@ const Column = memo(() => (
 							color='secondary'
 							onClick={() => {
 								window.location.hash = 'test';
+								Gtag.event('你夠瞭解自己嗎', '探索你的內心人格');
 							}}
 						>
 							<span className='text-3xl font-bold tracking-widest text-secondary xl:mt-0 xl:text-xl'>
@@ -38,6 +40,7 @@ const Column = memo(() => (
 							color='tertiary'
 							onClick={() => {
 								window.location.hash = 'match';
+								Gtag.event('你夠瞭解自己嗎', '十二星座親子關係');
 							}}
 						>
 							<span className='text-3xl font-bold tracking-widest text-tertiary xl:mt-0 xl:text-xl'>
