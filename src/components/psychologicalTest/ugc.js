@@ -22,7 +22,7 @@ const UGC = memo(() => {
 		<div className='UGC'>
 			<div className='dialog'>
 				<div className='pt-10 text-2xl font-medium tracking-widest text-white'>
-					只差一步取得你的專屬測驗！
+					輸入暱稱，一起來看測驗結果吧 !
 				</div>
 				<div className='flex w-full justify-center px-14'>
 					<input ref={ref} placeholder='輸入暱稱，一起來看測驗結果吧!（4-6字）' maxLength={12} />

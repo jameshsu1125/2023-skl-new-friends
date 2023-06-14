@@ -39,16 +39,22 @@ export const Sections = [
 	'test',
 	'match',
 	'school',
-	'lectures',
+	// 'lectures',
 	'join',
 	'activities',
+	'bannerA',
+	'bannerB',
 	'contact',
 	// 'footer',
 ];
 
-export const SchoolURL = 'https://www.skl.com.tw/';
+export const SchoolURL =
+	'https://www.meijimama.com.tw/Course/Index/5?Title=%E6%96%B0%E6%89%8B%E5%AA%BD%E5%92%AA%E5%85%88%E4%BF%AE%E7%8F%AD';
 export const LecturesURL = 'https://www.skl.com.tw/';
-export const AllianceURL = 'https://www.skl.com.tw/';
+export const AllianceURL = 'https://linebc.skl.com.tw/Tag/Bind/BC?LineUrl=Customer/Register';
 export const ContactURL = 'https://sc.skl.com.tw/s/xNZ2W';
 export const ContactTel = '0800-031-115';
 export const openMatchHash = 'constellationMatch';
+export const BannerAUrl = 'https://freeliving-uat.canlead.com.tw/event/sklife/skrewards/index.aspx';
+export const BannerBUrl =
+	'https://www.skfh.com.tw/find-your-way/?utm_source=sklnf&utm_medium=campaignsite&utm_campaign=findyourway';

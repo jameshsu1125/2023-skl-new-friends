@@ -54,6 +54,21 @@ const Contact = memo(() => {
 					</SpecialButton>
 					<Collapse title='新光新朋友活動注意事項'>
 						<div className='w-full px-0 text-xl xl:px-10'>
+							<h1>【心理測驗/星座配對】</h1>
+							<p>本測驗依著作權法規範，他人不得擅自提取內容修改、重製。</p>
+							<h1>【媽媽教室】</h1>
+							<ul className='list-outside list-decimal space-y-1 pl-6 text-justify'>
+								<li>參與本活動須加入明治會員並填寫個人資料。</li>
+								<li>本次合作活動不得重複報名參加。</li>
+								<li>
+									活動開放報名人數依主辦單位網站公告為主，報名人數達上限或達報名截止日，官網截止報名。
+								</li>
+								<li>獎項詳細內容與規格皆以實物為準，得獎人不得要求獎項更換或轉讓。</li>
+								<li>
+									提供不實聯絡資料致未能取得聯繫、未符合兌獎資格或未完成兌獎手續者，視為放棄得獎權益。
+								</li>
+								<li>主辦單位保有隨時修改及終止本活動之權利。</li>
+							</ul>
 							<h1>【同盟之樂】</h1>
 							<ul className='list-outside list-decimal space-y-1 pl-6 text-justify'>
 								<li>
