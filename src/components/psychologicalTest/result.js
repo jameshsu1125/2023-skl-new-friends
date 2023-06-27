@@ -117,7 +117,10 @@ const Result = memo(() => {
 							onClick={() => {
 								Gtag.event('結果', 'line分享');
 								setTimeout(() => {
-									Line.share(`${QueryString.root()}const-${index}.html`, '');
+									Line.share(
+										`${QueryString.root()}const-${index}.html`,
+										'Hi~快來跟我一起測試你是那種人格吧！',
+									);
 								}, 500);
 							}}
 						/>

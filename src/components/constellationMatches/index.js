@@ -18,9 +18,14 @@ const ConstellationMatches = memo(() => {
 
 	useEffect(() => {
 		document.body.style.overflow = 'hidden';
+		const [App] = [...document.getElementsByClassName('App')];
+		const [mainContainer] = [...App.children];
+		mainContainer.style.display = 'none';
+
 		setContext({ type: ACTION.LoadingProcess, state: { enabled: true } });
 		return () => {
 			document.body.style.overflow = 'visible';
+			mainContainer.removeAttribute('style');
 		};
 	}, []);
 
