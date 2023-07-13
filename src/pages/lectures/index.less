@@ -1,12 +1,5 @@
-@import url('../../settings/config.less');
-
 .Lectures {
 	position: relative;
-
-	& > div {
-		position: relative;
-	}
-
 	&::before {
 		position: absolute;
 		top: 20px;
@@ -23,105 +16,106 @@
 	}
 
 	.head {
+		background-size: 100%;
+	}
+
+	.head-0 {
 		width: image-width(@img) * @scale;
 		height: image-height(@img) * @scale;
 		background-image: url(@img);
-		background-size: 100%;
 
 		@scale: 0.9;
-		@img: './img/headline.svg';
+		@img: './img/head-0.svg';
 	}
 
-	.sub {
+	.head-1 {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+
+		@scale: 0.9;
+		@img: './img/head-1.svg';
+	}
+
+	.head-2 {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+
+		@scale: 0.9;
+		@img: './img/head-2.svg';
+	}
+
+	.head-3 {
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+
+		@scale: 0.9;
+		@img: './img/head-3.svg';
+	}
+
+	.img {
+		background-size: 100%;
+		width: 100%;
+		mask-size: 100% 100%;
+		mask-image: url('./img/mask.svg');
+		background-position-y: -10px;
+	}
+
+	.img-0 {
+		padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+		background-image: url(@img);
+
+		@img: './img/item-0.jpg';
+	}
+
+	.img-1 {
+		padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+		background-image: url(@img);
+
+		@img: './img/item-1.jpg';
+	}
+
+	.img-2 {
+		padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+		background-image: url(@img);
+
+		@img: './img/item-2.jpg';
+	}
+
+	.img-3 {
+		padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+		background-image: url(@img);
+
+		@img: './img/item-3.jpg';
+	}
+
+	.arrow {
+		position: absolute;
+		top: 50%;
+		z-index: 1;
+		margin-top: 0 - image-height(@img) * @scale * 0.5 - 20px;
 		width: image-width(@img) * @scale;
 		height: image-height(@img) * @scale;
 		background-image: url(@img);
 		background-size: 100%;
+		cursor: pointer;
 
-		@scale: 1;
-		@img: './img/sub.svg';
-	}
+		@scale: 0.9;
+		@img: './img/arrow.svg';
 
-	.carousel {
-		position: relative;
-		padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
-		width: @width;
-
-		@width: 100%;
-		@img: './img/mask.png';
-
-		& > div {
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-
-			.slick-slider {
-				height: 100%;
-			}
-
-			.slick-dots {
-				bottom: 3rem;
-			}
-
-			.item0 {
-				padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
-				width: @width;
-				background-image: url(@img);
-				background-size: cover;
-
-				@width: 100%;
-				@img: './img/mask.png';
-			}
-
-			.item1 {
-				padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
-				width: @width;
-				background-image: url(@img);
-				background-size: cover;
-
-				@width: 100%;
-				@img: './img/mask.png';
-			}
-
-			.item2 {
-				padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
-				width: @width;
-				background-image: url(@img);
-				background-size: cover;
-
-				@width: 100%;
-				@img: './img/mask.png';
-			}
-
-			.item3 {
-				padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * @width);
-				width: @width;
-				background-image: url(@img);
-				background-size: cover;
-
-				@width: 100%;
-				@img: './img/mask.png';
-			}
-		}
-	}
-}
-
-@media only screen and (max-width: @breakPoint) {
-	.Lectures {
 		&::before {
-			top: 490px;
-			right: -70px;
+			display: none;
 		}
+	}
 
-		.head {
-			width: image-width(@img) * @scale;
-			height: image-height(@img) * @scale;
-			background-image: url(@img);
+	.prev {
+		left: -46px;
+		transform: scale(-1, 1);
+	}
 
-			@scale: 0.95;
-			@img: './img/headline.svg';
-		}
+	.next {
+		right: -46px;
 	}
 }
